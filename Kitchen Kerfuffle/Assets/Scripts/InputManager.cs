@@ -23,16 +23,19 @@ public class InputManager : MonoBehaviour
     private void ShortHop(InputAction.CallbackContext obj)
     {
         Debug.Log("Short Hop!");
+        Debug.Log(obj.control.device.displayName);
     }
 
     private void FastFall(InputAction.CallbackContext obj)
     {
         Debug.Log("draggydown");
+        Debug.Log(obj.control.device.displayName);
     }
 
     private void Jump(InputAction.CallbackContext obj)
     {
         Debug.Log("Jump!");
+        Debug.Log(obj.control.device.displayName);
     }
 
     // Update is called once per frame
