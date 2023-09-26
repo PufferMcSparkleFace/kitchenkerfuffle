@@ -14,9 +14,15 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         controls = new Controls();
-        controls.TriangleControls.Jump.performed += Jump;
         controls.TriangleControls.FastFall.performed += FastFall;
+        controls.TriangleControls.ShortHop.performed += ShortHop;
+        controls.TriangleControls.Jump.performed += Jump;
         controls.Enable();
+    }
+
+    private void ShortHop(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Short Hop!");
     }
 
     private void FastFall(InputAction.CallbackContext obj)

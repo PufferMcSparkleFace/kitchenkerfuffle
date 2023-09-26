@@ -41,6 +41,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ShortHop"",
+                    ""type"": ""Button"",
+                    ""id"": ""19ad7efb-1b37-44e1-a142-69416d22c7a3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Tap""
                 }
             ],
             ""bindings"": [
@@ -164,6 +172,61 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccced523-65ab-45a8-a3b8-2a9d0c1813a5"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShortHop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""98961fea-f76e-4f63-928a-683506768eea"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShortHop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30b1844f-4cd8-46eb-ba8b-c41ad6021b09"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShortHop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66ac2a5a-7a0d-44fa-b09c-92aded825251"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShortHop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""824ff46b-c53a-4e3f-ba5b-301c13977a34"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShortHop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -175,6 +238,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_TriangleControls_Jump = m_TriangleControls.FindAction("Jump", throwIfNotFound: true);
         m_TriangleControls_FastFall = m_TriangleControls.FindAction("FastFall", throwIfNotFound: true);
         m_TriangleControls_Horizontal = m_TriangleControls.FindAction("Horizontal", throwIfNotFound: true);
+        m_TriangleControls_ShortHop = m_TriangleControls.FindAction("ShortHop", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,6 +291,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_TriangleControls_Jump;
     private readonly InputAction m_TriangleControls_FastFall;
     private readonly InputAction m_TriangleControls_Horizontal;
+    private readonly InputAction m_TriangleControls_ShortHop;
     public struct TriangleControlsActions
     {
         private @Controls m_Wrapper;
@@ -234,6 +299,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_TriangleControls_Jump;
         public InputAction @FastFall => m_Wrapper.m_TriangleControls_FastFall;
         public InputAction @Horizontal => m_Wrapper.m_TriangleControls_Horizontal;
+        public InputAction @ShortHop => m_Wrapper.m_TriangleControls_ShortHop;
         public InputActionMap Get() { return m_Wrapper.m_TriangleControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -252,6 +318,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Horizontal.started -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnHorizontal;
                 @Horizontal.performed -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnHorizontal;
                 @Horizontal.canceled -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnHorizontal;
+                @ShortHop.started -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnShortHop;
+                @ShortHop.performed -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnShortHop;
+                @ShortHop.canceled -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnShortHop;
             }
             m_Wrapper.m_TriangleControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -265,6 +334,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Horizontal.started += instance.OnHorizontal;
                 @Horizontal.performed += instance.OnHorizontal;
                 @Horizontal.canceled += instance.OnHorizontal;
+                @ShortHop.started += instance.OnShortHop;
+                @ShortHop.performed += instance.OnShortHop;
+                @ShortHop.canceled += instance.OnShortHop;
             }
         }
     }
@@ -274,5 +346,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnFastFall(InputAction.CallbackContext context);
         void OnHorizontal(InputAction.CallbackContext context);
+        void OnShortHop(InputAction.CallbackContext context);
     }
 }
