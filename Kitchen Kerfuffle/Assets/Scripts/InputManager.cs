@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
 
-    Controls controls; 
+    Controls controls;
+    float horizontal;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,6 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
     }
 }

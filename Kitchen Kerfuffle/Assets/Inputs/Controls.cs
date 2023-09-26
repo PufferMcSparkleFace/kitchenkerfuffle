@@ -33,6 +33,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Horizontal"",
+                    ""type"": ""Value"",
+                    ""id"": ""345939ae-5694-484b-90cf-f693accac2b2"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -82,23 +90,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""647b1f2c-617e-4a20-be17-60f8e52329b7"",
-                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""id"": ""0f220f38-138d-4fa9-9ebb-4b0f44dc1f19"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6b9edcd6-3174-4d9a-86de-45b71eb6147b"",
-                    ""path"": ""<Gamepad>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""FastFall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -112,6 +109,61 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""FastFall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c34e6d9-b878-487b-b4af-c34c84959dea"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FastFall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a3ba0a2-9b05-4a50-b79c-63b71845ef95"",
+                    ""path"": ""<Gamepad>/leftStick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1a795f54-a2d2-419b-84fb-4ff58676ffbc"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""cefcc3c7-7805-46d0-8142-97dc08a93f48"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""93000ec5-70c6-4051-ac91-5ee357d2309d"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -122,6 +174,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_TriangleControls = asset.FindActionMap("TriangleControls", throwIfNotFound: true);
         m_TriangleControls_Jump = m_TriangleControls.FindAction("Jump", throwIfNotFound: true);
         m_TriangleControls_FastFall = m_TriangleControls.FindAction("FastFall", throwIfNotFound: true);
+        m_TriangleControls_Horizontal = m_TriangleControls.FindAction("Horizontal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -173,12 +226,14 @@ public class @Controls : IInputActionCollection, IDisposable
     private ITriangleControlsActions m_TriangleControlsActionsCallbackInterface;
     private readonly InputAction m_TriangleControls_Jump;
     private readonly InputAction m_TriangleControls_FastFall;
+    private readonly InputAction m_TriangleControls_Horizontal;
     public struct TriangleControlsActions
     {
         private @Controls m_Wrapper;
         public TriangleControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_TriangleControls_Jump;
         public InputAction @FastFall => m_Wrapper.m_TriangleControls_FastFall;
+        public InputAction @Horizontal => m_Wrapper.m_TriangleControls_Horizontal;
         public InputActionMap Get() { return m_Wrapper.m_TriangleControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -194,6 +249,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @FastFall.started -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnFastFall;
                 @FastFall.performed -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnFastFall;
                 @FastFall.canceled -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnFastFall;
+                @Horizontal.started -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnHorizontal;
+                @Horizontal.performed -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnHorizontal;
+                @Horizontal.canceled -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnHorizontal;
             }
             m_Wrapper.m_TriangleControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -204,6 +262,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @FastFall.started += instance.OnFastFall;
                 @FastFall.performed += instance.OnFastFall;
                 @FastFall.canceled += instance.OnFastFall;
+                @Horizontal.started += instance.OnHorizontal;
+                @Horizontal.performed += instance.OnHorizontal;
+                @Horizontal.canceled += instance.OnHorizontal;
             }
         }
     }
@@ -212,5 +273,6 @@ public class @Controls : IInputActionCollection, IDisposable
     {
         void OnJump(InputAction.CallbackContext context);
         void OnFastFall(InputAction.CallbackContext context);
+        void OnHorizontal(InputAction.CallbackContext context);
     }
 }
