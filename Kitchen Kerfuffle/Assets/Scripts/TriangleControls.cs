@@ -4,11 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour
+public class TriangleControls : MonoBehaviour
 {
 
     Controls controls;
     float horizontal;
+    private float speed = 8f;
+    private float jumpHeight = 16f;
+    private float fallSpeed = 4f;
+    public bool canJump = true;
+    public bool canFastFall = false;
+
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +31,19 @@ public class InputManager : MonoBehaviour
 
     private void ShortHop(InputAction.CallbackContext obj)
     {
-        Debug.Log("Short Hop!");
+        //Debug.Log("Short Hop!");
         Debug.Log(obj.control.device.displayName);
     }
 
     private void FastFall(InputAction.CallbackContext obj)
     {
-        Debug.Log("draggydown");
+        //Debug.Log("draggydown");
         Debug.Log(obj.control.device.displayName);
     }
 
     private void Jump(InputAction.CallbackContext obj)
     {
-        Debug.Log("Jump!");
+       //Debug.Log("Jump!");
         Debug.Log(obj.control.device.displayName);
     }
 
@@ -42,5 +51,10 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 }
