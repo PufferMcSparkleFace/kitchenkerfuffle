@@ -16,12 +16,20 @@ public class @Controls : IInputActionCollection, IDisposable
     ""maps"": [
         {
             ""name"": ""TriangleControls"",
-            ""id"": ""bb8a4829-9a38-4fe2-9548-f8452ed7c4cd"",
+            ""id"": ""d45b2034-92c0-42a7-a2f4-e6c23324286a"",
             ""actions"": [
                 {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
-                    ""id"": ""fd67ef56-e683-4a57-bd4e-154a8800f742"",
+                    ""id"": ""93630b26-190d-4c9d-b365-b6748484478a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""FastFall"",
+                    ""type"": ""Button"",
+                    ""id"": ""78eb46a7-a73e-457a-8715-2d3a4922f3b3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -30,7 +38,7 @@ public class @Controls : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""8427d11b-a651-40ae-931a-fbb3022bda0c"",
+                    ""id"": ""36563719-114c-47df-8495-77239679db30"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -41,7 +49,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6f549154-71b4-494a-9cb2-917cbcfd95d3"",
+                    ""id"": ""e3a9e4fa-ab46-422d-8709-d51e754ebd94"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -52,7 +60,18 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9ab80aae-b349-4a40-a681-2c2dfa5d7285"",
+                    ""id"": ""49e01195-ad47-44fd-87e1-c5f53b813e30"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6fe1c86-aaa2-46fd-bccb-44271ab7b07a"",
                     ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -63,12 +82,34 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4d1cb3a5-aeb2-49a1-a7b0-25cb8829c7e5"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""id"": ""647b1f2c-617e-4a20-be17-60f8e52329b7"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6b9edcd6-3174-4d9a-86de-45b71eb6147b"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FastFall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6d1e4ec0-853b-48aa-bf16-aea6ed93372d"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FastFall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -80,6 +121,7 @@ public class @Controls : IInputActionCollection, IDisposable
         // TriangleControls
         m_TriangleControls = asset.FindActionMap("TriangleControls", throwIfNotFound: true);
         m_TriangleControls_Jump = m_TriangleControls.FindAction("Jump", throwIfNotFound: true);
+        m_TriangleControls_FastFall = m_TriangleControls.FindAction("FastFall", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -130,11 +172,13 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_TriangleControls;
     private ITriangleControlsActions m_TriangleControlsActionsCallbackInterface;
     private readonly InputAction m_TriangleControls_Jump;
+    private readonly InputAction m_TriangleControls_FastFall;
     public struct TriangleControlsActions
     {
         private @Controls m_Wrapper;
         public TriangleControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_TriangleControls_Jump;
+        public InputAction @FastFall => m_Wrapper.m_TriangleControls_FastFall;
         public InputActionMap Get() { return m_Wrapper.m_TriangleControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -147,6 +191,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnJump;
+                @FastFall.started -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnFastFall;
+                @FastFall.performed -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnFastFall;
+                @FastFall.canceled -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnFastFall;
             }
             m_Wrapper.m_TriangleControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -154,6 +201,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @FastFall.started += instance.OnFastFall;
+                @FastFall.performed += instance.OnFastFall;
+                @FastFall.canceled += instance.OnFastFall;
             }
         }
     }
@@ -161,5 +211,6 @@ public class @Controls : IInputActionCollection, IDisposable
     public interface ITriangleControlsActions
     {
         void OnJump(InputAction.CallbackContext context);
+        void OnFastFall(InputAction.CallbackContext context);
     }
 }
