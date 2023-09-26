@@ -11,8 +11,8 @@ public class TriangleControls : MonoBehaviour
     float horizontal;
     private float speed = 8f;
     private float jumpHeight = 16f;
+    private float shortHopHeight = 8f;
     private float fallSpeed = 4f;
-    public bool canJump = true;
     public bool canFastFall = false;
 
     [SerializeField] private Rigidbody2D rb;
@@ -45,6 +45,10 @@ public class TriangleControls : MonoBehaviour
     {
        //Debug.Log("Jump!");
         Debug.Log(obj.control.device.displayName);
+        if(IsGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+        }
     }
 
     // Update is called once per frame
@@ -56,5 +60,10 @@ public class TriangleControls : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 }
