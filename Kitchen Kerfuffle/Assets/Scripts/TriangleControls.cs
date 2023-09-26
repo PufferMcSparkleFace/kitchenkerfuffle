@@ -9,10 +9,10 @@ public class TriangleControls : MonoBehaviour
 
     Controls controls;
     float horizontal;
-    private float speed = 8f;
-    private float jumpHeight = 16f;
-    private float shortHopHeight = 8f;
-    private float fallSpeed = 4f;
+    private float speed = 6f;
+    private float jumpHeight = 22f;
+    private float shortHopHeight = 16f;
+    private float fallSpeed;
     public bool canFastFall = false;
 
     [SerializeField] private Rigidbody2D rb;
@@ -33,12 +33,21 @@ public class TriangleControls : MonoBehaviour
     {
         //Debug.Log("Short Hop!");
         Debug.Log(obj.control.device.displayName);
+        if (IsGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, shortHopHeight);
+            rb.gravityScale = 8f;
+        }
     }
 
     private void FastFall(InputAction.CallbackContext obj)
     {
         //Debug.Log("draggydown");
         Debug.Log(obj.control.device.displayName);
+        if(!IsGrounded() && rb.velocity.y <= 0)
+        {
+            rb.gravityScale = 18f;
+        }
     }
 
     private void Jump(InputAction.CallbackContext obj)
@@ -48,6 +57,7 @@ public class TriangleControls : MonoBehaviour
         if(IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            rb.gravityScale = 8f;
         }
     }
 
@@ -60,6 +70,7 @@ public class TriangleControls : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
     }
 
     private bool IsGrounded()
