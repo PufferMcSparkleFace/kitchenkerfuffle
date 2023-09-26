@@ -48,7 +48,7 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""id"": ""19ad7efb-1b37-44e1-a142-69416d22c7a3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Tap(duration=0.15)""
+                    ""interactions"": ""Tap""
                 }
             ],
             ""bindings"": [
