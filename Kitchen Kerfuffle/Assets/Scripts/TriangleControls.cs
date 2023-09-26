@@ -10,9 +10,8 @@ public class TriangleControls : MonoBehaviour
     Controls controls;
     float horizontal;
     private float speed = 6f;
-    private float jumpHeight = 35f;
-    private float shortHopHeight = 16f;
-    private float fallSpeed = 16f;
+    private float jumpHeight = 30f;
+    private float fallSpeed = 12f;
     private float fastFallSpeed = 50f;
     public bool canFastFall = false;
 
@@ -25,20 +24,8 @@ public class TriangleControls : MonoBehaviour
     {
         controls = new Controls();
         controls.TriangleControls.FastFall.performed += FastFall;
-        controls.TriangleControls.ShortHop.performed += ShortHop;
         controls.TriangleControls.Jump.performed += Jump;
         controls.Enable();
-    }
-
-    private void ShortHop(InputAction.CallbackContext obj)
-    {
-        //Debug.Log("Short Hop!");
-        Debug.Log(obj.control.device.displayName);
-        if (IsGrounded())
-        {
-            rb.velocity = new Vector2(rb.velocity.x, shortHopHeight);
-            rb.gravityScale = fallSpeed;
-        }
     }
 
     private void FastFall(InputAction.CallbackContext obj)
