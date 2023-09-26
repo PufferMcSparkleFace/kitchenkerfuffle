@@ -1,0 +1,66 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "TriangleControls",
+            "id": "bb8a4829-9a38-4fe2-9548-f8452ed7c4cd",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "fd67ef56-e683-4a57-bd4e-154a8800f742",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8427d11b-a651-40ae-931a-fbb3022bda0c",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f549154-71b4-494a-9cb2-917cbcfd95d3",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ab80aae-b349-4a40-a681-2c2dfa5d7285",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d1cb3a5-aeb2-49a1-a7b0-25cb8829c7e5",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
