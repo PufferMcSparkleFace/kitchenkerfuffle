@@ -10,8 +10,8 @@ public class TriangleControls : MonoBehaviour
     Controls controls;
     float horizontal;
     private float speed = 6f;
-    private float jumpHeight = 30f;
-    private float fallSpeed = 12f;
+    private float jumpHeight = 25f;
+    private float fallSpeed = 8f;
     private float fastFallSpeed = 50f;
     public bool canFastFall = false;
 
