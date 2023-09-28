@@ -14,6 +14,8 @@ public class TriangleControls : MonoBehaviour
     private float fallSpeed = 8f;
     private float fastFallSpeed = 50f;
     public bool canFastFall = false;
+    private float aimRotation;
+    Vector2 stickRotation;
 
     [SerializeField] private Transform playerPosition;
     [SerializeField] private Transform aimFocalPoint;
@@ -32,8 +34,6 @@ public class TriangleControls : MonoBehaviour
 
     private void FastFall(InputAction.CallbackContext obj)
     {
-        //Debug.Log("draggydown");
-        Debug.Log(obj.control.device.displayName);
         if(!IsGrounded() && rb.velocity.y <= 0)
         {
             rb.gravityScale = fastFallSpeed;
@@ -42,8 +42,6 @@ public class TriangleControls : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext obj)
     {
-       //Debug.Log("Jump!");
-        Debug.Log(obj.control.device.displayName);
         if(IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
@@ -55,13 +53,27 @@ public class TriangleControls : MonoBehaviour
     void Update()
     {
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+        
+        if (!IsGrounded())
+        {
+            horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.7f;
+        }
+
         aimFocalPoint.position = playerPosition.position;
+
+        stickRotation = controls.TriangleControls.Aim.ReadValue<Vector2>();
+
+        if (stickRotation.x != 0 && stickRotation.y != 0)
+        {
+            aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
+            aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
+        }
+
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
     }
 
     private bool IsGrounded()
