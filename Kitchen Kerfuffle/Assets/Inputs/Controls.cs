@@ -134,7 +134,7 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""id"": ""f226895a-62f3-4eff-94a6-44898ecbae3c"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone(min=0.65)"",
                     ""groups"": """",
                     ""action"": ""Aim"",
                     ""isComposite"": false,

@@ -947,6 +947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canFastFall: 0
+  aimIndicator: {fileID: 868270079}
   playerPosition: {fileID: 2009314645}
   aimFocalPoint: {fileID: 1384536372}
   rb: {fileID: 2009314642}

@@ -17,7 +17,7 @@ public class TriangleControls : MonoBehaviour
     private float aimRotation;
     Vector2 stickRotation;
 
-
+    [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
     [SerializeField] private Transform aimFocalPoint;
     [SerializeField] private Rigidbody2D rb;
@@ -31,6 +31,7 @@ public class TriangleControls : MonoBehaviour
         controls.TriangleControls.FastFall.performed += FastFall;
         controls.TriangleControls.Jump.performed += Jump;
         controls.Enable();
+        aimIndicator.enabled = false;
     }
 
     private void FastFall(InputAction.CallbackContext obj)
@@ -66,8 +67,13 @@ public class TriangleControls : MonoBehaviour
 
         if(stickRotation.x != 0 && stickRotation.y != 0)
         {
+            aimIndicator.enabled = true;
             aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
             aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
+        }
+        else
+        {
+            aimIndicator.enabled = false;
         }
     }
 
