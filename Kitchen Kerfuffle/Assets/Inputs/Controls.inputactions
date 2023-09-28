@@ -55,17 +55,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d1d1a110-06f8-437b-bfb4-8f7b492872e8",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "AxisDeadzone(min=0.5)",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6d1e4ec0-853b-48aa-bf16-aea6ed93372d",
                     "path": "<Keyboard>/s",
                     "interactions": "",
