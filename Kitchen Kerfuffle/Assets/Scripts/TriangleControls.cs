@@ -32,8 +32,6 @@ public class TriangleControls : MonoBehaviour
 
     private void FastFall(InputAction.CallbackContext obj)
     {
-        //Debug.Log("draggydown");
-        Debug.Log(obj.control.device.displayName);
         if(!IsGrounded() && rb.velocity.y <= 0)
         {
             rb.gravityScale = fastFallSpeed;
@@ -42,8 +40,6 @@ public class TriangleControls : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext obj)
     {
-       //Debug.Log("Jump!");
-        Debug.Log(obj.control.device.displayName);
         if(IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
@@ -61,7 +57,6 @@ public class TriangleControls : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
     }
 
     private bool IsGrounded()
