@@ -53,6 +53,11 @@ public class TriangleControls : MonoBehaviour
     void Update()
     {
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+        
+        if (!IsGrounded())
+        {
+            horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.7f;
+        }
 
         aimFocalPoint.position = playerPosition.position;
 
