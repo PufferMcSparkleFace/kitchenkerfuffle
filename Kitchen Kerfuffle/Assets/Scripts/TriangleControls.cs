@@ -15,6 +15,8 @@ public class TriangleControls : MonoBehaviour
     private float fastFallSpeed = 50f;
     public bool canFastFall = false;
 
+    [SerializeField] private Transform playerPosition;
+    [SerializeField] private Transform aimFocalPoint;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -53,6 +55,7 @@ public class TriangleControls : MonoBehaviour
     void Update()
     {
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+        aimFocalPoint.position = playerPosition.position;
     }
 
     private void FixedUpdate()
