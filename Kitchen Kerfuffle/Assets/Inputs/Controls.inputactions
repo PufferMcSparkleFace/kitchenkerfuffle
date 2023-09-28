@@ -28,6 +28,14 @@
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Aim",
+                    "type": "Value",
+                    "id": "a35f6d8f-6afc-424c-a2c7-d683c5b4ac5d",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -107,6 +115,17 @@
                     "action": "Horizontal",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "f226895a-62f3-4eff-94a6-44898ecbae3c",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
