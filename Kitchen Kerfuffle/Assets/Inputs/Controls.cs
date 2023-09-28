@@ -41,14 +41,6 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Aim"",
-                    ""type"": ""Value"",
-                    ""id"": ""d21bfffc-4492-4bea-af3d-5276c1cdf7c8"",
-                    ""expectedControlType"": ""Stick"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -128,17 +120,6 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bc35d87b-11f2-4ad8-86cf-97ee8a706b60"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -150,7 +131,6 @@ public class @Controls : IInputActionCollection, IDisposable
         m_TriangleControls_Jump = m_TriangleControls.FindAction("Jump", throwIfNotFound: true);
         m_TriangleControls_FastFall = m_TriangleControls.FindAction("FastFall", throwIfNotFound: true);
         m_TriangleControls_Horizontal = m_TriangleControls.FindAction("Horizontal", throwIfNotFound: true);
-        m_TriangleControls_Aim = m_TriangleControls.FindAction("Aim", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -203,7 +183,6 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_TriangleControls_Jump;
     private readonly InputAction m_TriangleControls_FastFall;
     private readonly InputAction m_TriangleControls_Horizontal;
-    private readonly InputAction m_TriangleControls_Aim;
     public struct TriangleControlsActions
     {
         private @Controls m_Wrapper;
@@ -211,7 +190,6 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_TriangleControls_Jump;
         public InputAction @FastFall => m_Wrapper.m_TriangleControls_FastFall;
         public InputAction @Horizontal => m_Wrapper.m_TriangleControls_Horizontal;
-        public InputAction @Aim => m_Wrapper.m_TriangleControls_Aim;
         public InputActionMap Get() { return m_Wrapper.m_TriangleControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -230,9 +208,6 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Horizontal.started -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnHorizontal;
                 @Horizontal.performed -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnHorizontal;
                 @Horizontal.canceled -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnHorizontal;
-                @Aim.started -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnAim;
-                @Aim.performed -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnAim;
-                @Aim.canceled -= m_Wrapper.m_TriangleControlsActionsCallbackInterface.OnAim;
             }
             m_Wrapper.m_TriangleControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -246,9 +221,6 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Horizontal.started += instance.OnHorizontal;
                 @Horizontal.performed += instance.OnHorizontal;
                 @Horizontal.canceled += instance.OnHorizontal;
-                @Aim.started += instance.OnAim;
-                @Aim.performed += instance.OnAim;
-                @Aim.canceled += instance.OnAim;
             }
         }
     }
@@ -258,6 +230,5 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnFastFall(InputAction.CallbackContext context);
         void OnHorizontal(InputAction.CallbackContext context);
-        void OnAim(InputAction.CallbackContext context);
     }
 }
