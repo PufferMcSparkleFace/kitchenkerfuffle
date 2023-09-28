@@ -53,7 +53,7 @@ public class TriangleControls : MonoBehaviour
     void Update()
     {
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
-        
+
         aimFocalPoint.position = playerPosition.position;
 
         stickRotation = controls.TriangleControls.Aim.ReadValue<Vector2>();
