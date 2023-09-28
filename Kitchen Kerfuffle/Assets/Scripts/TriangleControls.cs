@@ -14,8 +14,6 @@ public class TriangleControls : MonoBehaviour
     private float fallSpeed = 8f;
     private float fastFallSpeed = 50f;
     public bool canFastFall = false;
-    private float aimRotation;
-    Vector2 stickRotation;
 
     [SerializeField] private Transform playerPosition;
     [SerializeField] private Transform aimFocalPoint;
@@ -59,13 +57,6 @@ public class TriangleControls : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        aimRotation = stickRotation.x + stickRotation.y;
-        aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
-    }
-
-    private void OnRotate(InputValue RotationValue)
-    {
-        stickRotation = RotationValue.Get<Vector2>();
     }
 
     private bool IsGrounded()
