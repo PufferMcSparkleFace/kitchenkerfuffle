@@ -62,8 +62,13 @@ public class TriangleControls : MonoBehaviour
         aimFocalPoint.position = playerPosition.position;
 
         stickRotation = controls.TriangleControls.Aim.ReadValue<Vector2>();
-        aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
-        aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
+
+        if (stickRotation.x != 0 && stickRotation.y != 0)
+        {
+            aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
+            aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
+        }
+
     }
 
     private void FixedUpdate()
