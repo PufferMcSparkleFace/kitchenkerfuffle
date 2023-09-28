@@ -53,19 +53,17 @@ public class TriangleControls : MonoBehaviour
     void Update()
     {
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+        
         aimFocalPoint.position = playerPosition.position;
+
+        stickRotation = controls.TriangleControls.Aim.ReadValue<Vector2>();
+        aimRotation = stickRotation.x + stickRotation.y * 90;
+        aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        aimRotation = stickRotation.x + stickRotation.y;
-        aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
-    }
-
-    private void OnRotate(InputValue RotationValue)
-    {
-        stickRotation = RotationValue.Get<Vector2>();
     }
 
     private bool IsGrounded()
