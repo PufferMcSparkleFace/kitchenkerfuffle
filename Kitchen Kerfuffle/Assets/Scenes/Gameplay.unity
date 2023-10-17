@@ -872,6 +872,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.2, z: 1}
   m_Children:
   - {fileID: 235472297}
+  - {fileID: 2078176217}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -900,6 +901,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  bubbleCentre: {fileID: 2078176216}
 --- !u!1 &1207240605
 GameObject:
   m_ObjectHideFlags: 0

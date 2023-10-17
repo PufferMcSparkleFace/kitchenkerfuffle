@@ -26,6 +26,7 @@ public class CircleControls : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private GameObject bubbleCentre;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +34,27 @@ public class CircleControls : MonoBehaviour
         controls = new Controls();
         controls.CircleControls.Jump.performed += Jump;
         controls.CircleControls.NormalShot.performed += NormalShot;
+        controls.CircleControls.SpecialShot.performed += SpecialShot;
         controls.Enable();
         aimIndicator.enabled = false;
+    }
+
+    private void SpecialShot(InputAction.CallbackContext obj)
+    {
+        if (canFire == true)
+        {
+            bubbleCentre.SetActive(true);
+            StartCoroutine(Deactivate());
+            canFire = false;
+            StartCoroutine(Reload());
+        }
+    }
+
+    IEnumerator Deactivate()
+    {
+        yield return new WaitForSeconds(0.01f);
+        bubbleCentre.SetActive(false);
+        yield return null;
     }
 
     private void NormalShot(InputAction.CallbackContext obj)
