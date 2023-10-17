@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Images/Inputs/Controls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Inputs/Controls.inputactions'
 
 using System;
 using System.Collections;
@@ -141,6 +141,142 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CircleControls"",
+            ""id"": ""2c9bafd3-fcf4-4c66-95ea-dbd6441796a6"",
+            ""actions"": [
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a1ada67-03a0-446e-a3c8-9b387ce2c336"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Horizontal"",
+                    ""type"": ""Value"",
+                    ""id"": ""2c4ce34e-c5c5-484d-8f4b-9b7ec4d57621"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""6beb057f-4673-4e45-8ed3-3f4cd68fbd17"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Normal Shot"",
+                    ""type"": ""Button"",
+                    ""id"": ""8071498e-2802-497d-a81b-cd412b3521b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Special Shot"",
+                    ""type"": ""Button"",
+                    ""id"": ""622f62c7-bb64-4aa4-b624-213d994956f4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0ddc6c67-7801-43e5-8913-1fb29b417e78"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de2aa61c-bdf5-4d18-9764-077c2dc8a078"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""58f29a6f-ec12-49bb-90f3-5e4c6a4f6dd5"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""7d1f5679-18e0-4a36-a243-4ef9bbf62632"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""453bf98c-db98-4679-9d3a-65123ab4b6ce"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b98ea2b-db33-429e-bd27-47d5d65cb491"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone(min=0.65)"",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93156f80-2ef4-4730-a3b8-c8f202947ebf"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Normal Shot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""26e97d7c-7897-45e6-bfa4-ae97102aebb4"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special Shot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -151,6 +287,13 @@ public class @Controls : IInputActionCollection, IDisposable
         m_TriangleControls_FastFall = m_TriangleControls.FindAction("FastFall", throwIfNotFound: true);
         m_TriangleControls_Horizontal = m_TriangleControls.FindAction("Horizontal", throwIfNotFound: true);
         m_TriangleControls_Aim = m_TriangleControls.FindAction("Aim", throwIfNotFound: true);
+        // CircleControls
+        m_CircleControls = asset.FindActionMap("CircleControls", throwIfNotFound: true);
+        m_CircleControls_Jump = m_CircleControls.FindAction("Jump", throwIfNotFound: true);
+        m_CircleControls_Horizontal = m_CircleControls.FindAction("Horizontal", throwIfNotFound: true);
+        m_CircleControls_Aim = m_CircleControls.FindAction("Aim", throwIfNotFound: true);
+        m_CircleControls_NormalShot = m_CircleControls.FindAction("Normal Shot", throwIfNotFound: true);
+        m_CircleControls_SpecialShot = m_CircleControls.FindAction("Special Shot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -253,11 +396,84 @@ public class @Controls : IInputActionCollection, IDisposable
         }
     }
     public TriangleControlsActions @TriangleControls => new TriangleControlsActions(this);
+
+    // CircleControls
+    private readonly InputActionMap m_CircleControls;
+    private ICircleControlsActions m_CircleControlsActionsCallbackInterface;
+    private readonly InputAction m_CircleControls_Jump;
+    private readonly InputAction m_CircleControls_Horizontal;
+    private readonly InputAction m_CircleControls_Aim;
+    private readonly InputAction m_CircleControls_NormalShot;
+    private readonly InputAction m_CircleControls_SpecialShot;
+    public struct CircleControlsActions
+    {
+        private @Controls m_Wrapper;
+        public CircleControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Jump => m_Wrapper.m_CircleControls_Jump;
+        public InputAction @Horizontal => m_Wrapper.m_CircleControls_Horizontal;
+        public InputAction @Aim => m_Wrapper.m_CircleControls_Aim;
+        public InputAction @NormalShot => m_Wrapper.m_CircleControls_NormalShot;
+        public InputAction @SpecialShot => m_Wrapper.m_CircleControls_SpecialShot;
+        public InputActionMap Get() { return m_Wrapper.m_CircleControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CircleControlsActions set) { return set.Get(); }
+        public void SetCallbacks(ICircleControlsActions instance)
+        {
+            if (m_Wrapper.m_CircleControlsActionsCallbackInterface != null)
+            {
+                @Jump.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnJump;
+                @Horizontal.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnHorizontal;
+                @Horizontal.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnHorizontal;
+                @Horizontal.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnHorizontal;
+                @Aim.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnAim;
+                @NormalShot.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnNormalShot;
+                @NormalShot.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnNormalShot;
+                @NormalShot.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnNormalShot;
+                @SpecialShot.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnSpecialShot;
+                @SpecialShot.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnSpecialShot;
+                @SpecialShot.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnSpecialShot;
+            }
+            m_Wrapper.m_CircleControlsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Horizontal.started += instance.OnHorizontal;
+                @Horizontal.performed += instance.OnHorizontal;
+                @Horizontal.canceled += instance.OnHorizontal;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
+                @NormalShot.started += instance.OnNormalShot;
+                @NormalShot.performed += instance.OnNormalShot;
+                @NormalShot.canceled += instance.OnNormalShot;
+                @SpecialShot.started += instance.OnSpecialShot;
+                @SpecialShot.performed += instance.OnSpecialShot;
+                @SpecialShot.canceled += instance.OnSpecialShot;
+            }
+        }
+    }
+    public CircleControlsActions @CircleControls => new CircleControlsActions(this);
     public interface ITriangleControlsActions
     {
         void OnJump(InputAction.CallbackContext context);
         void OnFastFall(InputAction.CallbackContext context);
         void OnHorizontal(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+    }
+    public interface ICircleControlsActions
+    {
+        void OnJump(InputAction.CallbackContext context);
+        void OnHorizontal(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
+        void OnNormalShot(InputAction.CallbackContext context);
+        void OnSpecialShot(InputAction.CallbackContext context);
     }
 }

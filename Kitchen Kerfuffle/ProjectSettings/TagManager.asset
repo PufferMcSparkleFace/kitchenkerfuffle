@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Triangle
+  - Circle
+  - Bubble Trigger
+  - Bubble Centre
   layers:
   - Default
   - TransparentFX
@@ -13,12 +17,12 @@ TagManager:
   - UI
   - 
   - 
-  - Player
+  - 
   - Ground
-  - 
-  - 
-  - 
-  - 
+  - Circle
+  - Triangle
+  - Bubble
+  - BubbleTrigger
   - 
   - 
   - 
