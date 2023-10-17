@@ -8,7 +8,6 @@ public class Bubble : MonoBehaviour
     public Rigidbody2D bubbleRB;
     public float bubbleSpeed;
     private int collisionCount;
-    public Transform target;
 
     // Start is called before the first frame update
     void Start()
