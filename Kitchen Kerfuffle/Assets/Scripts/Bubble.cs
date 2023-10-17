@@ -7,6 +7,7 @@ public class Bubble : MonoBehaviour
     Vector3 lastVelocity;
     public Rigidbody2D bubbleRB;
     public float bubbleSpeed;
+    private int collisionCount;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +30,14 @@ public class Bubble : MonoBehaviour
         }
         else
         {
+            collisionCount++;
+            if(collisionCount >= 4)
+            {
+                Destroy(gameObject);
+            }
+
             var speed = lastVelocity.magnitude;
             var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
-
             bubbleRB.velocity = direction * Mathf.Max(speed, 0f);
         }
         
