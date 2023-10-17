@@ -15,12 +15,12 @@ TagManager:
   - UI
   - 
   - 
-  - Player
+  - 
   - Ground
   - Circle
   - Triangle
-  - 
-  - 
+  - Bubble
+  - BubbleTrigger
   - 
   - 
   - 

@@ -121,6 +121,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &23518147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 23518148}
+  - component: {fileID: 23518149}
+  m_Layer: 13
+  m_Name: Bubble Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &23518148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23518147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000423209}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &23518149
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23518147}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &104123035
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 235472297}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Ground Check Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &986892265
 Transform:
   m_ObjectHideFlags: 0
@@ -759,13 +806,13 @@ GameObject:
   - component: {fileID: 1149074169}
   - component: {fileID: 1149074168}
   - component: {fileID: 1149074173}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Circle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1149074168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1051,7 +1098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1384536372
 Transform:
   m_ObjectHideFlags: 0
@@ -1076,7 +1123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1533443505}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Ground Check Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1110,7 +1157,7 @@ GameObject:
   - component: {fileID: 2000423211}
   - component: {fileID: 2000423210}
   - component: {fileID: 2000423212}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1177,7 +1224,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -2.97, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 23518148}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
@@ -1246,13 +1294,13 @@ GameObject:
   - component: {fileID: 2009314642}
   - component: {fileID: 2009314646}
   - component: {fileID: 2009314647}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Triangle
   m_TagString: Triangle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &2009314642
 Rigidbody2D:
   serializedVersion: 4
