@@ -41,9 +41,8 @@ public class CircleControls : MonoBehaviour
     {
         if(canFire == true)
         {
-            Instantiate(bubble, aimCursor.position, Quaternion.Euler(new Vector3(0, 0, aimFocalPoint.transform.rotation.z)));
+            Instantiate(bubble, aimCursor.position, Quaternion.identity);
             canFire = false;
-            aimIndicator.enabled = false;
             StartCoroutine(Reload());
         }
     }
@@ -52,7 +51,6 @@ public class CircleControls : MonoBehaviour
     {
         yield return new WaitForSeconds(fireRate);
         canFire = true;
-        aimIndicator.enabled = true;
         yield return null;
     }
 
@@ -81,8 +79,13 @@ public class CircleControls : MonoBehaviour
 
         if (stickRotation.x != 0 && stickRotation.y != 0)
         {
+            aimIndicator.enabled = true;
             aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
             aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
+        }
+        else
+        {
+            aimIndicator.enabled = false;
         }
     }
 
