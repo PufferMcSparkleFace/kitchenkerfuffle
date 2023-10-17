@@ -12,7 +12,7 @@ public class Bubble : MonoBehaviour
     void Start()
     {
         bubbleRB = GetComponent<Rigidbody2D>();
-        bubbleRB.AddForce(new Vector2(bubbleSpeed, bubbleSpeed));
+        bubbleRB.AddForce(transform.up * bubbleSpeed);
     }
 
     // Update is called once per frame
