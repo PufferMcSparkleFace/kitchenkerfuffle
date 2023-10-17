@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 23518149}
   m_Layer: 13
   m_Name: Bubble Trigger
-  m_TagString: Untagged
+  m_TagString: Bubble Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,9 +165,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000002311134, y: 0.19387202}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 20.311611
 --- !u!1 &104123035
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a18a872ef731fd408cc54b7db9d09df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canFastFall: 0
+  canJump: 0
   aimIndicator: {fileID: 104123037}
   playerPosition: {fileID: 1149074172}
   aimFocalPoint: {fileID: 986892265}

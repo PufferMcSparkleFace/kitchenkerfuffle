@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Triangle
   - Circle
+  - Bubble Trigger
   layers:
   - Default
   - TransparentFX

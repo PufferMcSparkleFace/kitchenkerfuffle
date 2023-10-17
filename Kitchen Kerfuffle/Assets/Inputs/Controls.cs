@@ -155,14 +155,6 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""FastFall"",
-                    ""type"": ""Button"",
-                    ""id"": ""f1f31c8c-aaea-486e-8493-d1f8f845cdac"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Horizontal"",
                     ""type"": ""Value"",
                     ""id"": ""2c4ce34e-c5c5-484d-8f4b-9b7ec4d57621"",
@@ -199,28 +191,6 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6693a2f4-225d-4c6d-9c18-5ad07b13f951"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""FastFall"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cd3f89c3-7d71-4848-a4fc-a4c42971b716"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""FastFall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -282,7 +252,6 @@ public class @Controls : IInputActionCollection, IDisposable
         // CircleControls
         m_CircleControls = asset.FindActionMap("CircleControls", throwIfNotFound: true);
         m_CircleControls_Jump = m_CircleControls.FindAction("Jump", throwIfNotFound: true);
-        m_CircleControls_FastFall = m_CircleControls.FindAction("FastFall", throwIfNotFound: true);
         m_CircleControls_Horizontal = m_CircleControls.FindAction("Horizontal", throwIfNotFound: true);
         m_CircleControls_Aim = m_CircleControls.FindAction("Aim", throwIfNotFound: true);
     }
@@ -392,7 +361,6 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_CircleControls;
     private ICircleControlsActions m_CircleControlsActionsCallbackInterface;
     private readonly InputAction m_CircleControls_Jump;
-    private readonly InputAction m_CircleControls_FastFall;
     private readonly InputAction m_CircleControls_Horizontal;
     private readonly InputAction m_CircleControls_Aim;
     public struct CircleControlsActions
@@ -400,7 +368,6 @@ public class @Controls : IInputActionCollection, IDisposable
         private @Controls m_Wrapper;
         public CircleControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_CircleControls_Jump;
-        public InputAction @FastFall => m_Wrapper.m_CircleControls_FastFall;
         public InputAction @Horizontal => m_Wrapper.m_CircleControls_Horizontal;
         public InputAction @Aim => m_Wrapper.m_CircleControls_Aim;
         public InputActionMap Get() { return m_Wrapper.m_CircleControls; }
@@ -415,9 +382,6 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnJump;
-                @FastFall.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnFastFall;
-                @FastFall.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnFastFall;
-                @FastFall.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnFastFall;
                 @Horizontal.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnHorizontal;
                 @Horizontal.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnHorizontal;
                 @Horizontal.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnHorizontal;
@@ -431,9 +395,6 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @FastFall.started += instance.OnFastFall;
-                @FastFall.performed += instance.OnFastFall;
-                @FastFall.canceled += instance.OnFastFall;
                 @Horizontal.started += instance.OnHorizontal;
                 @Horizontal.performed += instance.OnHorizontal;
                 @Horizontal.canceled += instance.OnHorizontal;
@@ -454,7 +415,6 @@ public class @Controls : IInputActionCollection, IDisposable
     public interface ICircleControlsActions
     {
         void OnJump(InputAction.CallbackContext context);
-        void OnFastFall(InputAction.CallbackContext context);
         void OnHorizontal(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
     }

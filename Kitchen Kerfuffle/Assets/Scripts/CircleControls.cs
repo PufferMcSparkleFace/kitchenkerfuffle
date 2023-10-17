@@ -10,11 +10,10 @@ public class CircleControls : MonoBehaviour
     Controls controls;
     float horizontal;
     private float speed = 6f;
-    private float jumpHeight = 12f;
-    private float fallSpeed = 2f;
-    private float fastFallSpeed = 10f;
-    public bool canFastFall = false;
+    private float jumpHeight = 9f;
+    private float fallSpeed = 1f;
     private float aimRotation;
+    public bool canJump = false;
     Vector2 stickRotation;
 
     [SerializeField] SpriteRenderer aimIndicator;
@@ -28,23 +27,14 @@ public class CircleControls : MonoBehaviour
     void Start()
     {
         controls = new Controls();
-        controls.CircleControls.FastFall.performed += FastFall;
         controls.CircleControls.Jump.performed += Jump;
         controls.Enable();
         aimIndicator.enabled = false;
     }
 
-    private void FastFall(InputAction.CallbackContext obj)
-    {
-        if (!IsGrounded() && rb.velocity.y <= 2)
-        {
-            rb.gravityScale = fastFallSpeed;
-        }
-    }
-
     private void Jump(InputAction.CallbackContext obj)
     {
-        if (IsGrounded())
+        if (IsGrounded() || canJump == true)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
             rb.gravityScale = fallSpeed;
@@ -86,5 +76,21 @@ public class CircleControls : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bubble Trigger")
+        {
+            canJump = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bubble Trigger")
+        {
+            canJump = false;
+        }
     }
 }

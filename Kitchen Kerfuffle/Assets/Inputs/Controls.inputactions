@@ -142,14 +142,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "FastFall",
-                    "type": "Button",
-                    "id": "f1f31c8c-aaea-486e-8493-d1f8f845cdac",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Horizontal",
                     "type": "Value",
                     "id": "2c4ce34e-c5c5-484d-8f4b-9b7ec4d57621",
@@ -186,28 +178,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6693a2f4-225d-4c6d-9c18-5ad07b13f951",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "FastFall",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cd3f89c3-7d71-4848-a4fc-a4c42971b716",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "FastFall",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
