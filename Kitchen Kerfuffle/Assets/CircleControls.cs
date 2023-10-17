@@ -10,9 +10,9 @@ public class CircleControls : MonoBehaviour
     Controls controls;
     float horizontal;
     private float speed = 6f;
-    private float jumpHeight = 25f;
-    private float fallSpeed = 8f;
-    private float fastFallSpeed = 50f;
+    private float jumpHeight = 12f;
+    private float fallSpeed = 2f;
+    private float fastFallSpeed = 10f;
     public bool canFastFall = false;
     private float aimRotation;
     Vector2 stickRotation;
@@ -36,7 +36,7 @@ public class CircleControls : MonoBehaviour
 
     private void FastFall(InputAction.CallbackContext obj)
     {
-        if (!IsGrounded() && rb.velocity.y <= 0)
+        if (!IsGrounded() && rb.velocity.y <= 2)
         {
             rb.gravityScale = fastFallSpeed;
         }

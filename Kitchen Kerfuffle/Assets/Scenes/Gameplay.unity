@@ -1046,7 +1046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1384536372}
   m_Layer: 0
-  m_Name: Aim Focal Point Triangler
+  m_Name: Aim Focal Point Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
