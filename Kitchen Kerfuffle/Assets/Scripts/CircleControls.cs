@@ -41,7 +41,7 @@ public class CircleControls : MonoBehaviour
     {
         if(canFire == true)
         {
-            Instantiate(bubble, aimCursor.position, Quaternion.identity);
+            Instantiate(bubble, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
             canFire = false;
             StartCoroutine(Reload());
         }
