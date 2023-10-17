@@ -23,9 +23,17 @@ public class Bubble : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var speed = lastVelocity.magnitude;
-        var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+        if(collision.gameObject.tag == "Triangle")
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            var speed = lastVelocity.magnitude;
+            var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
 
-        bubbleRB.velocity = direction * Mathf.Max(speed, 0f);
+            bubbleRB.velocity = direction * Mathf.Max(speed, 0f);
+        }
+        
     }
 }

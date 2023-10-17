@@ -761,7 +761,7 @@ GameObject:
   - component: {fileID: 1149074173}
   m_Layer: 8
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Circle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1051,7 +1051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1384536372
 Transform:
   m_ObjectHideFlags: 0
@@ -1248,11 +1248,11 @@ GameObject:
   - component: {fileID: 2009314647}
   m_Layer: 8
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: Triangle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &2009314642
 Rigidbody2D:
   serializedVersion: 4
