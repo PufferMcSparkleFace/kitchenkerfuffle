@@ -156,6 +156,22 @@
                     "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Normal Shot",
+                    "type": "Button",
+                    "id": "8071498e-2802-497d-a81b-cd412b3521b6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Special Shot",
+                    "type": "Button",
+                    "id": "622f62c7-bb64-4aa4-b624-213d994956f4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -222,6 +238,28 @@
                     "processors": "StickDeadzone(min=0.65)",
                     "groups": "",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "93156f80-2ef4-4730-a3b8-c8f202947ebf",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Normal Shot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "26e97d7c-7897-45e6-bfa4-ae97102aebb4",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Special Shot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

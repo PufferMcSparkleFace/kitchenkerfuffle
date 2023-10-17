@@ -169,6 +169,22 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Stick"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Normal Shot"",
+                    ""type"": ""Button"",
+                    ""id"": ""8071498e-2802-497d-a81b-cd412b3521b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Special Shot"",
+                    ""type"": ""Button"",
+                    ""id"": ""622f62c7-bb64-4aa4-b624-213d994956f4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -237,6 +253,28 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93156f80-2ef4-4730-a3b8-c8f202947ebf"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Normal Shot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""26e97d7c-7897-45e6-bfa4-ae97102aebb4"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special Shot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -254,6 +292,8 @@ public class @Controls : IInputActionCollection, IDisposable
         m_CircleControls_Jump = m_CircleControls.FindAction("Jump", throwIfNotFound: true);
         m_CircleControls_Horizontal = m_CircleControls.FindAction("Horizontal", throwIfNotFound: true);
         m_CircleControls_Aim = m_CircleControls.FindAction("Aim", throwIfNotFound: true);
+        m_CircleControls_NormalShot = m_CircleControls.FindAction("Normal Shot", throwIfNotFound: true);
+        m_CircleControls_SpecialShot = m_CircleControls.FindAction("Special Shot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -363,6 +403,8 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_CircleControls_Jump;
     private readonly InputAction m_CircleControls_Horizontal;
     private readonly InputAction m_CircleControls_Aim;
+    private readonly InputAction m_CircleControls_NormalShot;
+    private readonly InputAction m_CircleControls_SpecialShot;
     public struct CircleControlsActions
     {
         private @Controls m_Wrapper;
@@ -370,6 +412,8 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_CircleControls_Jump;
         public InputAction @Horizontal => m_Wrapper.m_CircleControls_Horizontal;
         public InputAction @Aim => m_Wrapper.m_CircleControls_Aim;
+        public InputAction @NormalShot => m_Wrapper.m_CircleControls_NormalShot;
+        public InputAction @SpecialShot => m_Wrapper.m_CircleControls_SpecialShot;
         public InputActionMap Get() { return m_Wrapper.m_CircleControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +432,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Aim.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnAim;
                 @Aim.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnAim;
                 @Aim.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnAim;
+                @NormalShot.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnNormalShot;
+                @NormalShot.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnNormalShot;
+                @NormalShot.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnNormalShot;
+                @SpecialShot.started -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnSpecialShot;
+                @SpecialShot.performed -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnSpecialShot;
+                @SpecialShot.canceled -= m_Wrapper.m_CircleControlsActionsCallbackInterface.OnSpecialShot;
             }
             m_Wrapper.m_CircleControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -401,6 +451,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
+                @NormalShot.started += instance.OnNormalShot;
+                @NormalShot.performed += instance.OnNormalShot;
+                @NormalShot.canceled += instance.OnNormalShot;
+                @SpecialShot.started += instance.OnSpecialShot;
+                @SpecialShot.performed += instance.OnSpecialShot;
+                @SpecialShot.canceled += instance.OnSpecialShot;
             }
         }
     }
@@ -417,5 +473,7 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnHorizontal(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+        void OnNormalShot(InputAction.CallbackContext context);
+        void OnSpecialShot(InputAction.CallbackContext context);
     }
 }

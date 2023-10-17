@@ -15,9 +15,13 @@ public class CircleControls : MonoBehaviour
     private float aimRotation;
     public bool canJump = false;
     Vector2 stickRotation;
+    public float fireRate;
+    public bool canFire;
+    public GameObject bubble;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
+    [SerializeField] private Transform aimCursor;
     [SerializeField] private Transform aimFocalPoint;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -28,8 +32,26 @@ public class CircleControls : MonoBehaviour
     {
         controls = new Controls();
         controls.CircleControls.Jump.performed += Jump;
+        controls.CircleControls.NormalShot.performed += NormalShot;
         controls.Enable();
         aimIndicator.enabled = false;
+    }
+
+    private void NormalShot(InputAction.CallbackContext obj)
+    {
+        if(canFire == true)
+        {
+            Instantiate(bubble, aimCursor.position, Quaternion.identity);
+            canFire = false;
+            StartCoroutine(Reload());
+        }
+    }
+
+    IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(fireRate);
+        canFire = true;
+        yield return null;
     }
 
     private void Jump(InputAction.CallbackContext obj)
