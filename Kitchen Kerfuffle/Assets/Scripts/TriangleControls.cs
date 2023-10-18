@@ -16,6 +16,7 @@ public class TriangleControls : MonoBehaviour
     public bool canFastFall = false;
     private float aimRotation;
     Vector2 stickRotation;
+    public int dashes = 3;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
@@ -23,6 +24,13 @@ public class TriangleControls : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+
+
+    [SerializeField] private float dashingVelocity = 14f;
+    [SerializeField] private float dashingTime = 0.5f;
+    private Vector2 dashingDirection;
+    private bool isDashing = false;
+    private bool canDash = true;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +51,22 @@ public class TriangleControls : MonoBehaviour
 
     private void SpecialShot(InputAction.CallbackContext obj)
     {
+        if(dashes > 0 && canDash == true)
+        {
+            isDashing = true;
+            canDash = false;
+            dashingDirection = new Vector2(stickRotation.x, stickRotation.y);
+            StartCoroutine(StopDashing());
+        }
+    }
 
+    private IEnumerator StopDashing()
+    {
+        yield return new WaitForSeconds(dashingTime);
+        isDashing = false;
+        dashes--;
+        yield return new WaitForSeconds(0.5f);
+        canDash = true;
     }
 
     private void FastFall(InputAction.CallbackContext obj)
@@ -66,18 +89,7 @@ public class TriangleControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
-
-        if (!IsGrounded())
-        {
-            horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
-        }
-
-        aimFocalPoint.position = playerPosition.position;
-
-        stickRotation = controls.TriangleControls.Aim.ReadValue<Vector2>();
-
-        if(stickRotation.x != 0 && stickRotation.y != 0)
+        if (stickRotation.x != 0 && stickRotation.y != 0)
         {
             aimIndicator.enabled = true;
             aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
@@ -87,6 +99,24 @@ public class TriangleControls : MonoBehaviour
         {
             aimIndicator.enabled = false;
         }
+
+        aimFocalPoint.position = playerPosition.position;
+
+        if (isDashing == true)
+        {
+            rb.velocity = dashingDirection.normalized * dashingVelocity;
+            return;
+        }
+
+        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+
+        if (!IsGrounded())
+        {
+            horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
+        }
+
+        stickRotation = controls.TriangleControls.Aim.ReadValue<Vector2>();
+
     }
 
     private void FixedUpdate()
@@ -98,5 +128,10 @@ public class TriangleControls : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        dashes = 3;
     }
 }
