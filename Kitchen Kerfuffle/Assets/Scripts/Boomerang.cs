@@ -8,6 +8,7 @@ public class Boomerang : MonoBehaviour
     [SerializeField] private GameObject triangle;
     [SerializeField] private Rigidbody2D boomerangRB;
     public float boomerangSpeed;
+    public float returningSpeed;
     public int durability = 1;
 
     // Start is called before the first frame update
@@ -17,10 +18,24 @@ public class Boomerang : MonoBehaviour
         boomerangRB.AddForce(transform.up * boomerangSpeed);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        boomerangRB.AddForce(triangle.transform.position - transform.position * returningSpeed *Time.deltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Triangle")
+        {
+            if(durability == 1)
+            {
+                durability--;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
 }
