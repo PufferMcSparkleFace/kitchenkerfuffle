@@ -20,7 +20,7 @@ public class Boomerang : MonoBehaviour
 
     private void FixedUpdate()
     {
-        boomerangRB.AddForce(triangle.transform.position - transform.position * returningSpeed *Time.deltaTime);
+        boomerangRB.AddForce((triangle.transform.position - transform.position) * returningSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
