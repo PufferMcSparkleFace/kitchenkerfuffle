@@ -139,7 +139,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -159,3 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a7e6f4f3e588140a64b75044ee7413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triangle: {fileID: 0}
+  boomerangRB: {fileID: 7129482839741417422}
+  boomerangSpeed: 1000
