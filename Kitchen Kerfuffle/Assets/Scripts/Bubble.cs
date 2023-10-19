@@ -23,7 +23,7 @@ public class Bubble : MonoBehaviour
        
         bubbleCentre = GameObject.FindGameObjectWithTag("Bubble Centre");
         lastVelocity = bubbleRB.velocity;
-        bubbleRB.AddForce(bubbleCentre.transform.position - transform.position * 15);
+        bubbleRB.AddForce((bubbleCentre.transform.position - transform.position) * 15);
 
     }
 

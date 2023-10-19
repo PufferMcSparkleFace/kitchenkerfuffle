@@ -1246,6 +1246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canFastFall: 0
+  canFire: 1
+  boomerang: {fileID: 7129482839741417409, guid: 5a2d7a7fe3239494b9f059b05e2722e7,
+    type: 3}
+  fireRate: 1
   aimIndicator: {fileID: 868270079}
   playerPosition: {fileID: 2009314645}
   aimFocalPoint: {fileID: 1384536372}
@@ -1254,6 +1258,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  aimCursor: {fileID: 868270078}
 --- !u!1 &2078176216
 GameObject:
   m_ObjectHideFlags: 0
