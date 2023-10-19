@@ -30,8 +30,20 @@ public class TriangleControls : MonoBehaviour
         controls = new Controls();
         controls.TriangleControls.FastFall.performed += FastFall;
         controls.TriangleControls.Jump.performed += Jump;
+        controls.TriangleControls.NormalShot.performed += NormalShot;
+        controls.TriangleControls.SpecialShot.performed += SpecialShot;
         controls.Enable();
         aimIndicator.enabled = false;
+    }
+
+    private void NormalShot(InputAction.CallbackContext obj)
+    {
+
+    }
+
+    private void SpecialShot(InputAction.CallbackContext obj)
+    {
+
     }
 
     private void FastFall(InputAction.CallbackContext obj)
@@ -75,12 +87,8 @@ public class TriangleControls : MonoBehaviour
         {
             aimIndicator.enabled = false;
         }
-    }
 
-    private void FixedUpdate()
-    {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
     }
 
     private bool IsGrounded()
