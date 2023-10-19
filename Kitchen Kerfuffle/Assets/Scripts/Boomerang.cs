@@ -23,16 +23,4 @@ public class Boomerang : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Triangle")
-        {
-            durability--;
-            if(durability == 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
-
 }
