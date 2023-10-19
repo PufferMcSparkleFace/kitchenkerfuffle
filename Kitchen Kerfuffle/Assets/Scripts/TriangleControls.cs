@@ -16,6 +16,9 @@ public class TriangleControls : MonoBehaviour
     public bool canFastFall = false;
     private float aimRotation;
     Vector2 stickRotation;
+    public bool canFire = true;
+    public GameObject boomerang;
+    public float fireRate;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
@@ -23,6 +26,7 @@ public class TriangleControls : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform aimCursor;
 
     // Start is called before the first frame update
     void Start()
@@ -36,9 +40,22 @@ public class TriangleControls : MonoBehaviour
         aimIndicator.enabled = false;
     }
 
+
     private void NormalShot(InputAction.CallbackContext obj)
     {
+        if (canFire == true)
+        {
+            Instantiate(boomerang, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
+            canFire = false;
+            StartCoroutine(Reload());
+        }
+    }
 
+    IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(fireRate);
+        canFire = true;
+        yield return null;
     }
 
     private void SpecialShot(InputAction.CallbackContext obj)
