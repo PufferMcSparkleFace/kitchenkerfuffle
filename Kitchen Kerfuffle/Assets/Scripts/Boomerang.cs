@@ -10,6 +10,7 @@ public class Boomerang : MonoBehaviour
     public float boomerangSpeed;
     public float returningSpeed;
     public int durability = 1;
+    Vector3 lastVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class Boomerang : MonoBehaviour
             boomerangRB.drag = 0;
         }
         boomerangRB.AddForce((triangle.transform.position - transform.position) * returningSpeed * Time.deltaTime);
+        lastVelocity = boomerangRB.velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -39,6 +41,12 @@ public class Boomerang : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+        if(collision.gameObject.tag == "Boomerang")
+        {
+            var speed = lastVelocity.magnitude;
+            var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+            boomerangRB.velocity = direction * Mathf.Max(speed, 0f);
         }
     }
 
