@@ -20,6 +20,10 @@ public class Boomerang : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(boomerangRB.velocity == Vector2.zero)
+        {
+            boomerangRB.drag = 0;
+        }
         boomerangRB.AddForce((triangle.transform.position - transform.position) * returningSpeed * Time.deltaTime);
     }
 

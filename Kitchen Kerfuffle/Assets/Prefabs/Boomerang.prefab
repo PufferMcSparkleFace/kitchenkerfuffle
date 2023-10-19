@@ -161,6 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triangle: {fileID: 0}
   boomerangRB: {fileID: 7129482839741417422}
-  boomerangSpeed: 2000
-  returningSpeed: 500
+  boomerangSpeed: 1000
+  returningSpeed: 250
   durability: 1
