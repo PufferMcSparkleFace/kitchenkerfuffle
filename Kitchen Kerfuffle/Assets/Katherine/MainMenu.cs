@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("CharacterSelection");
     }
 
+
     public void QuitGame ()
     {
         Debug.Log("QUIT!!!!");
