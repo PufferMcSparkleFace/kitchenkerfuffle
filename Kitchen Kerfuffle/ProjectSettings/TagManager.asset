@@ -8,6 +8,7 @@ TagManager:
   - Circle
   - Bubble Trigger
   - Bubble Centre
+  - Boomerang
   layers:
   - Default
   - TransparentFX
