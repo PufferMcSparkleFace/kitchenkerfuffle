@@ -104,6 +104,11 @@ public class TriangleControls : MonoBehaviour
         {
             horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
         }
+        else
+        {
+            dashes = 3;
+        }
+
 
         aimFocalPoint.position = playerPosition.position;
 
@@ -130,7 +135,7 @@ public class TriangleControls : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Boomerang" || collision.gameObject.tag == "Ground")
+        if(collision.gameObject.tag == "Boomerang")
         {
             dashes = 3;
         }
