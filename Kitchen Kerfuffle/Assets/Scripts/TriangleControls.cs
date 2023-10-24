@@ -22,7 +22,6 @@ public class TriangleControls : MonoBehaviour
     public float dashReloadTime;
     public bool canDash = true;
     public int dashes = 3;
-    public float dashSpeed;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
@@ -66,7 +65,6 @@ public class TriangleControls : MonoBehaviour
     {
         if(dashes != 0 && canDash == true)
         {
-            rb.AddForce((aimCursor.position - playerPosition.position) * dashSpeed * 10000);
             dashes--;
             canDash = false;
             StartCoroutine(DashReload());
