@@ -19,6 +19,9 @@ public class TriangleControls : MonoBehaviour
     public bool canFire = true;
     public GameObject boomerang;
     public float fireRate;
+    public float dashReloadTime;
+    public bool canDash = true;
+    public int dashes = 3;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
@@ -60,7 +63,19 @@ public class TriangleControls : MonoBehaviour
 
     private void SpecialShot(InputAction.CallbackContext obj)
     {
+        if(dashes != 0 && canDash == true)
+        {
+            dashes--;
+            canDash = false;
+            StartCoroutine(DashReload());
+        }
+    }
 
+    IEnumerator DashReload()
+    {
+        yield return new WaitForSeconds(dashReloadTime);
+        canDash = true;
+        yield return null;
     }
 
     private void FastFall(InputAction.CallbackContext obj)
@@ -111,5 +126,13 @@ public class TriangleControls : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Boomerang" || collision.gameObject.tag == "Ground")
+        {
+            dashes = 3;
+        }
     }
 }

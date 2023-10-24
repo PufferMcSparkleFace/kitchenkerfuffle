@@ -9,6 +9,7 @@ TagManager:
   - Bubble Trigger
   - Bubble Centre
   - Boomerang
+  - Ground
   layers:
   - Default
   - TransparentFX
