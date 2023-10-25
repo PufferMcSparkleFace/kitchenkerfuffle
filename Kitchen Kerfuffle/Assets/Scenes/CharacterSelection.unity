@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 560305822}
   - component: {fileID: 560305821}
   m_Layer: 5
-  m_Name: MapButton
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Map
+  m_Text: Play
 --- !u!222 &848288833
 CanvasRenderer:
   m_ObjectHideFlags: 0
