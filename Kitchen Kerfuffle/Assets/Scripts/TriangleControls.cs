@@ -48,6 +48,7 @@ public class TriangleControls : MonoBehaviour
     {
         if (canFire == true)
         {
+            //shoot boomerang
             Instantiate(boomerang, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
             canFire = false;
             StartCoroutine(Reload());
@@ -65,6 +66,7 @@ public class TriangleControls : MonoBehaviour
     {
         if(dashes != 0 && canDash == true)
         {
+            //dash (not yet coded fully)
             dashes--;
             canDash = false;
             StartCoroutine(DashReload());
@@ -82,6 +84,7 @@ public class TriangleControls : MonoBehaviour
     {
         if(!IsGrounded() && rb.velocity.y <= 0)
         {
+            //fast fall, animation optional
             rb.gravityScale = fastFallSpeed;
         }
     }
@@ -90,6 +93,7 @@ public class TriangleControls : MonoBehaviour
     {
         if(IsGrounded())
         {
+            //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
             rb.gravityScale = fallSpeed;
         }
@@ -124,7 +128,11 @@ public class TriangleControls : MonoBehaviour
         {
             aimIndicator.enabled = false;
         }
+    }
 
+    private void FixedUpdate()
+    {
+        //velocity adjusted every frame
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 

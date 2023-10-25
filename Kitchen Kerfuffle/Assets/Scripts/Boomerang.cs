@@ -39,9 +39,12 @@ public class Boomerang : MonoBehaviour
             }
             else
             {
+                //boomerang is caught by triangle
                 Destroy(gameObject);
             }
         }
+        
+        //boomerang bounces off other boomerangs
         if(collision.gameObject.tag == "Boomerang" || collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Ceiling")
         {
             var speed = lastVelocity.magnitude;

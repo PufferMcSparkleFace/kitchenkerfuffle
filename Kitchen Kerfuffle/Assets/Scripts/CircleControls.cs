@@ -43,6 +43,7 @@ public class CircleControls : MonoBehaviour
     {
         if (canFire == true)
         {
+            //call bubble animation
             bubbleCentre.SetActive(true);
             StartCoroutine(Deactivate());
             canFire = false;
@@ -61,6 +62,7 @@ public class CircleControls : MonoBehaviour
     {
         if(canFire == true)
         {
+            //shoot bubble animation
             Instantiate(bubble, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
             canFire = false;
             StartCoroutine(Reload());
@@ -78,6 +80,7 @@ public class CircleControls : MonoBehaviour
     {
         if (IsGrounded() || canJump == true)
         {
+            //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
             rb.gravityScale = fallSpeed;
         }
@@ -111,8 +114,8 @@ public class CircleControls : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //adjusting velocity every frame
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
     }
 
     private bool IsGrounded()

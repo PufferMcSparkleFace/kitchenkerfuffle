@@ -29,10 +29,12 @@ public class Bubble : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //bubble breaks on contact with triangle
         if(collision.gameObject.tag == "Triangle")
         {
             Destroy(gameObject);
         }
+        //bubble bounces off walls, but only a limited amount of times
         else
         {
             collisionCount++;
