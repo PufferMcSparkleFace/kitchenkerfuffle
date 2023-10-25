@@ -144,6 +144,7 @@ public class CircleControls : MonoBehaviour
     {
         if(collision.gameObject.tag == "Boomerang")
         {
+            //circle took damage
             scoreTracker.CircleHit();   
         }
     }

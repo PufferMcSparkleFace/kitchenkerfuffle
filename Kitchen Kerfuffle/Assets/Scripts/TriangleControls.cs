@@ -165,6 +165,7 @@ public class TriangleControls : MonoBehaviour
         }
         if(collision.gameObject.tag == "Bubble")
         {
+            //triangle took damage
             scoreTracker.TriangleHit();
         }
     }
