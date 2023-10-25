@@ -42,7 +42,7 @@ public class Boomerang : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if(collision.gameObject.tag == "Boomerang")
+        if(collision.gameObject.tag == "Boomerang" || collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Ceiling")
         {
             var speed = lastVelocity.magnitude;
             var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
