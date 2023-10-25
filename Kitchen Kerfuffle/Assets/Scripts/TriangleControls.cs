@@ -19,9 +19,12 @@ public class TriangleControls : MonoBehaviour
     public bool canFire = true;
     public GameObject boomerang;
     public float fireRate;
-    public float dashReloadTime;
+    public float dashTime;
     public bool canDash = true;
     public int dashes = 3;
+    public bool isDashing = false;
+    public float dashSpeed;
+    public float dashReloadTime;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
@@ -69,12 +72,17 @@ public class TriangleControls : MonoBehaviour
             //dash (not yet coded fully)
             dashes--;
             canDash = false;
-            StartCoroutine(DashReload());
+            StartCoroutine(Dash());
         }
     }
 
-    IEnumerator DashReload()
+    IEnumerator Dash()
     {
+        isDashing = true;
+        rb.velocity = new Vector2(0,0);
+        rb.AddForce( * dashSpeed);
+        yield return new WaitForSeconds(dashTime);
+        isDashing = false;
         yield return new WaitForSeconds(dashReloadTime);
         canDash = true;
         yield return null;
@@ -132,8 +140,12 @@ public class TriangleControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //velocity adjusted every frame
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        if (!isDashing)
+        {
+            //velocity adjusted every frame, unless dashing
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        }
+        
     }
 
     private bool IsGrounded()
