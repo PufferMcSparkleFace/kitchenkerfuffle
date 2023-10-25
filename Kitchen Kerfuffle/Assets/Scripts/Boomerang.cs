@@ -43,7 +43,7 @@ public class Boomerang : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if(collision.gameObject.tag == "Bubble" || gameObject.tag == "Circle")
+        if(collision.gameObject.tag == "Bubble" || collision.gameObject.tag == "Circle")
         {
             Destroy(gameObject);
         }
