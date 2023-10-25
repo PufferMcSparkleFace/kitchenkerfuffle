@@ -980,6 +980,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7c351c5a38a3f43971fc06992b2835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 1d99716bab8457047a576b99d61bfa33, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &1531122525
 GameObject:
   m_ObjectHideFlags: 0
