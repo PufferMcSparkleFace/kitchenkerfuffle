@@ -961,7 +961,7 @@ MonoBehaviour:
   sounds:
   - name: BattleBGMusic
     clip: {fileID: 8300000, guid: c5209d51a1629b54f921093d05ac4297, type: 3}
-    volume: 1
+    volume: 0
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -2011,11 +2011,11 @@ MonoBehaviour:
   boomerang: {fileID: 7129482839741417409, guid: 5a2d7a7fe3239494b9f059b05e2722e7,
     type: 3}
   fireRate: 1
-  dashTime: 0.05
+  dashTime: 0.1
   canDash: 1
   dashes: 3
   isDashing: 0
-  dashSpeed: 10000
+  dashSpeed: 1000
   dashReloadTime: 0.2
   aimIndicator: {fileID: 868270079}
   playerPosition: {fileID: 2009314645}

@@ -16,6 +16,7 @@ public class TriangleControls : MonoBehaviour
     public bool canFastFall = false;
     private float aimRotation;
     Vector2 stickRotation;
+    Vector2 leftStickRotation;
     public bool canFire = true;
     public GameObject boomerang;
     public float fireRate;
@@ -76,20 +77,6 @@ public class TriangleControls : MonoBehaviour
         }
     }
 
-    IEnumerator Dash()
-    {
-        isDashing = true;
-        rb.gravityScale = 0;
-        rb.velocity = new Vector2(0,0);
-        rb.AddForce(transform.right * dashSpeed);
-        yield return new WaitForSeconds(dashTime);
-        rb.gravityScale = 8;
-        isDashing = false;
-        yield return new WaitForSeconds(dashReloadTime);
-        canDash = true;
-        yield return null;
-    }
-
     private void FastFall(InputAction.CallbackContext obj)
     {
         if(!IsGrounded() && rb.velocity.y <= 0)
@@ -138,6 +125,20 @@ public class TriangleControls : MonoBehaviour
         {
             aimIndicator.enabled = false;
         }
+    }
+
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(0, 0);
+        rb.AddForce(stickRotation * dashSpeed);
+        yield return new WaitForSeconds(dashTime);
+        rb.gravityScale = 8;
+        isDashing = false;
+        yield return new WaitForSeconds(dashReloadTime);
+        canDash = true;
+        yield return null;
     }
 
     private void FixedUpdate()
