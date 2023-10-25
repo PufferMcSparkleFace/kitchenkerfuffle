@@ -79,9 +79,11 @@ public class TriangleControls : MonoBehaviour
     IEnumerator Dash()
     {
         isDashing = true;
+        rb.gravityScale = 0;
         rb.velocity = new Vector2(0,0);
-        rb.AddForce( * dashSpeed);
+        rb.AddForce(transform.right * dashSpeed);
         yield return new WaitForSeconds(dashTime);
+        rb.gravityScale = 8;
         isDashing = false;
         yield return new WaitForSeconds(dashReloadTime);
         canDash = true;

@@ -2015,7 +2015,7 @@ MonoBehaviour:
   canDash: 1
   dashes: 3
   isDashing: 0
-  dashSpeed: 2500
+  dashSpeed: 10000
   dashReloadTime: 0.2
   aimIndicator: {fileID: 868270079}
   playerPosition: {fileID: 2009314645}
