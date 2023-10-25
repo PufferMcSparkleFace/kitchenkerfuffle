@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 6034735896109803934}
   m_Layer: 12
   m_Name: Bubble
-  m_TagString: Untagged
+  m_TagString: Bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,3 +183,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleRB: {fileID: 0}
   bubbleSpeed: 150
+  bubbleCentre: {fileID: 0}

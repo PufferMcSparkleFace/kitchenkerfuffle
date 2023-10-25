@@ -43,6 +43,10 @@ public class Boomerang : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if(collision.gameObject.tag == "Bubble" || gameObject.tag == "Circle")
+        {
+            Destroy(gameObject);
+        }
         
         //boomerang bounces off other boomerangs
         if(collision.gameObject.tag == "Boomerang" || collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Ceiling")

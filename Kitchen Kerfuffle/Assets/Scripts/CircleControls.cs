@@ -18,6 +18,7 @@ public class CircleControls : MonoBehaviour
     public float fireRate;
     public bool canFire;
     public GameObject bubble;
+    public ScoreTracker scoreTracker;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
@@ -136,6 +137,14 @@ public class CircleControls : MonoBehaviour
         if (collision.gameObject.tag == "Bubble Trigger")
         {
             canJump = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Boomerang")
+        {
+            scoreTracker.CircleHit();   
         }
     }
 }

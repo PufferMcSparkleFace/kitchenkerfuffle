@@ -26,6 +26,7 @@ public class TriangleControls : MonoBehaviour
     public bool isDashing = false;
     public float dashSpeed;
     public float dashReloadTime;
+    public ScoreTracker scoreTracker;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
@@ -161,6 +162,10 @@ public class TriangleControls : MonoBehaviour
         if(collision.gameObject.tag == "Boomerang")
         {
             dashes = 3;
+        }
+        if(collision.gameObject.tag == "Bubble")
+        {
+            scoreTracker.TriangleHit();
         }
     }
 }
