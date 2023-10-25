@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        Debug.Log("Game Loading to MainMenu");
         SceneManager.LoadScene("MainMenu");
     }
 

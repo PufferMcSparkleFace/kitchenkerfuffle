@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
+  - name: CharacterSelectionMusic
     clip: {fileID: 8300000, guid: c3b534f7575c70d42885202f24b7c3b6, type: 3}
     volume: 1
     pitch: 1
