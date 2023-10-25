@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void LoadScene()
+    public void LoadCharacterScene()
     {
         SceneManager.LoadScene("CharacterSelection");
     }
