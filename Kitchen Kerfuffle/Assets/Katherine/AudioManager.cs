@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake() //initialize the class method is in
     {
-        //for music to continue to play in the next scene
+        /*//for music to continue to play in the next scene
         if (instance == null)
             instance = this;
         else
@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);*/
 
 
 
@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour
     {
 
         Play("MenuMusic");
+        Play("CharacterSelectMusic");
         Play("BattleBGMusic");
     }
 
