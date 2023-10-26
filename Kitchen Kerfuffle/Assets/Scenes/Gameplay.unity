@@ -990,7 +990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &770770549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   sounds:
   - name: BattleBGMusic
     clip: {fileID: 8300000, guid: c5209d51a1629b54f921093d05ac4297, type: 3}
-    volume: 0
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
