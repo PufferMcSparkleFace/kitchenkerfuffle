@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: e8eac9f7c83578843b828247ec1f16ee
+guid: 9b023c975c292074f9d6e8e58970853f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6461487187544601726
-    second: triangel_realxing_0
+      213: -1274834128867689871
+    second: Relax_0
   - first:
-      213: -2277054740634553066
-    second: triangel_realxing_1
+      213: -1582645829050475065
+    second: Relax_1
   - first:
-      213: -8580725307574704604
-    second: triangel_realxing_2
+      213: 5157441935274495015
+    second: Relax_2
   - first:
-      213: 5601931012230729433
-    second: triangel_realxing_3
+      213: 8285806876925951159
+    second: Relax_3
   - first:
-      213: 6465287091965405729
-    second: triangel_realxing_4
+      213: -2237947848541696037
+    second: Relax_4
   - first:
-      213: -3249989240587118756
-    second: triangel_realxing_5
+      213: -3238157840045624193
+    second: Relax_5
   - first:
-      213: 4396675108879968343
-    second: triangel_realxing_6
+      213: -55011771635084312
+    second: Relax_6
   - first:
-      213: -8276832364682752324
-    second: triangel_realxing_7
+      213: 9132841067021242545
+    second: Relax_7
   - first:
-      213: -1426718384156761450
-    second: triangel_realxing_8
+      213: 2219854409250042565
+    second: Relax_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 5
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,12 +114,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: triangel_realxing_0
+      name: Relax_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,19 +128,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28b8aa923af2456a0800000000000000
-      internalID: -6461487187544601726
+      spriteID: 17afb493d11ee4ee0800000000000000
+      internalID: -1274834128867689871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: triangel_realxing_1
+      name: Relax_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd5132f000590ae0800000000000000
+      internalID: -1582645829050475065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relax_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 128
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -149,19 +170,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 615bb5a17c64660e0800000000000000
-      internalID: -2277054740634553066
+      spriteID: 72c4db56d1ae29740800000000000000
+      internalID: 5157441935274495015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: triangel_realxing_2
+      name: Relax_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bcf8a854791df270800000000000000
+      internalID: 8285806876925951159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relax_4
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 128
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -170,19 +212,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4262ece9bc32be880800000000000000
-      internalID: -8580725307574704604
+      spriteID: bdf82d5f94631f0e0800000000000000
+      internalID: -2237947848541696037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: triangel_realxing_3
+      name: Relax_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f743f69d990cf03d0800000000000000
+      internalID: -3238157840045624193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relax_6
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 128
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -191,19 +254,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dec148439e0ebd40800000000000000
-      internalID: 5601931012230729433
+      spriteID: 8e3d93dc51f8c3ff0800000000000000
+      internalID: -55011771635084312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: triangel_realxing_4
+      name: Relax_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b096e5009e5ebe70800000000000000
+      internalID: 9132841067021242545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relax_8
       rect:
         serializedVersion: 2
         x: 512
         y: 0
-        width: 128
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -212,92 +296,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12a24870b5059b950800000000000000
-      internalID: 6465287091965405729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: triangel_realxing_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5796fe3108b5e2d0800000000000000
-      internalID: -3249989240587118756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: triangel_realxing_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 758a79987b0240d30800000000000000
-      internalID: 4396675108879968343
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: triangel_realxing_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbec0ad11d8c22d80800000000000000
-      internalID: -8276832364682752324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: triangel_realxing_8
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 128
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69221dd4037433ce0800000000000000
-      internalID: -1426718384156761450
+      spriteID: 5c2fe6ce2d18ece10800000000000000
+      internalID: 2219854409250042565
       vertices: []
       indices: 
       edges: []
