@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScoreTracker : MonoBehaviour
 {
     public Animator TAnimator;
+    public Animator BAnimator;
 
     public int triangleLives = 3;
     public int circleLives = 3;
