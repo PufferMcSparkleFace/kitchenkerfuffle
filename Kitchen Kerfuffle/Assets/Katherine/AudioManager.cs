@@ -10,9 +10,11 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+    
+
     void Awake() //initialize the class method is in
     {
-        /*//for music to continue to play in the next scene
+        //for music to continue to play in the next scene
         if (instance == null)
             instance = this;
         else
@@ -21,8 +23,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);*/
-
+        DontDestroyOnLoad(gameObject);
 
 
         //changing music pitch n volume
@@ -37,11 +38,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "Gameplay")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
 
         Play("MenuMusic");
-        Play("CharacterSelectMusic");
         Play("BattleBGMusic");
     }
 
