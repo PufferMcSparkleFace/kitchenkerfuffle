@@ -51,8 +51,6 @@ public class AudioManager : MonoBehaviour
     {
         //what will play in game object
         Play("MenuMusic");
-        Play("BattleBGMusic");
-        
         
     }
 
