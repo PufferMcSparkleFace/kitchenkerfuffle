@@ -2833,6 +2833,7 @@ GameObject:
   - component: {fileID: 1149074169}
   - component: {fileID: 1149074168}
   - component: {fileID: 1149074173}
+  - component: {fileID: 1149074167}
   m_Layer: 10
   m_Name: Circle
   m_TagString: Circle
@@ -2840,6 +2841,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1149074167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149074166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5723e1846ccad1241a9bc97f6f8579ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  numOfHearts: 3
+  hearts:
+  - {fileID: 946494963}
+  - {fileID: 597983988}
+  - {fileID: 1604589464}
+  fullHeart: {fileID: 21300000, guid: 922b01325a785e142b9a034ce53a51be, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 867624e88f7092c4e9caae9a6e24be7a, type: 3}
 --- !u!61 &1149074168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3947,6 +3968,7 @@ GameObject:
   - component: {fileID: 2009314647}
   - component: {fileID: 2009314643}
   - component: {fileID: 2009314644}
+  - component: {fileID: 2009314648}
   m_Layer: 11
   m_Name: Triangle
   m_TagString: Triangle
@@ -4120,6 +4142,26 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   aimCursor: {fileID: 868270078}
+--- !u!114 &2009314648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009314641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5723e1846ccad1241a9bc97f6f8579ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  numOfHearts: 3
+  hearts:
+  - {fileID: 2025467557}
+  - {fileID: 1759778277}
+  - {fileID: 1257391595}
+  fullHeart: {fileID: 21300000, guid: 922b01325a785e142b9a034ce53a51be, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 867624e88f7092c4e9caae9a6e24be7a, type: 3}
 --- !u!1 &2025467555
 GameObject:
   m_ObjectHideFlags: 0
