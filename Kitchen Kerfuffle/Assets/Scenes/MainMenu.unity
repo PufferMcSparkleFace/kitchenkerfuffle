@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30.8, y: 157.1}
+  m_AnchoredPosition: {x: 30.8, y: 146}
   m_SizeDelta: {x: 501.63943, y: 72.68947}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22528734
@@ -179,7 +179,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 60
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1138,10 +1138,10 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 81.16
+    angle: 83.3
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0
+    radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -1224,7 +1224,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.02
+      value: 1.66
       mode: 0
       spread: 0
       speed:
@@ -1343,7 +1343,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 5.64
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1460,7 +1460,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 0.51351655
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -3914,7 +3914,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.05061455
-      minScalar: 0.7853982
+      minScalar: 0.2401573
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5175,13 +5175,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614594582}
-  m_LocalRotation: {x: -0.0037019255, y: -0.70709705, z: -0.7070972, w: -0.0037024915}
-  m_LocalPosition: {x: 1.07, y: 2.186, z: 0}
-  m_LocalScale: {x: 0.49312854, y: 0.49312854, z: 5.754341}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+  m_LocalPosition: {x: 1.23, y: 2.555, z: 0}
+  m_LocalScale: {x: 0.2623365, y: 0.2623365, z: 3.0612173}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 270.6, y: 89.99999, z: 89.99999}
+  m_LocalEulerAnglesHint: {x: 270, y: 90, z: 0}
 --- !u!1 &628210446
 GameObject:
   m_ObjectHideFlags: 0
