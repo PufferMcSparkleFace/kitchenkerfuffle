@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class TriangleControls : MonoBehaviour
@@ -15,6 +16,7 @@ public class TriangleControls : MonoBehaviour
     private float fastFallSpeed = 50f;
     public bool canFastFall = false;
     private float aimRotation;
+    private bool isGround;
     Vector2 stickRotation;
     Vector2 leftStickRotation;
     public bool canFire = true;
@@ -27,6 +29,7 @@ public class TriangleControls : MonoBehaviour
     public float dashSpeed;
     public float dashReloadTime;
     public ScoreTracker scoreTracker;
+    public Animator animator;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
@@ -55,9 +58,17 @@ public class TriangleControls : MonoBehaviour
         {
             //shoot boomerang
             Instantiate(boomerang, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
+            animator.SetBool("isAttacking", true);
+            StartCoroutine(playAttackAnimation());
             canFire = false;
             StartCoroutine(Reload());
         }
+    }
+
+    IEnumerator playAttackAnimation()
+    {
+        yield return new WaitForSeconds(0.4f);
+        animator.SetBool("isAttacking", false);
     }
 
     IEnumerator Reload()
@@ -80,7 +91,7 @@ public class TriangleControls : MonoBehaviour
 
     private void FastFall(InputAction.CallbackContext obj)
     {
-        if(!IsGrounded() && rb.velocity.y <= 0)
+        if (!isGround && rb.velocity.y <= 0)
         {
             //fast fall, animation optional
             rb.gravityScale = fastFallSpeed;
@@ -89,8 +100,9 @@ public class TriangleControls : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext obj)
     {
-        if(IsGrounded())
+        if (isGround)
         {
+            animator.SetBool("IsJumping", true);
             //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
             rb.gravityScale = fallSpeed;
@@ -102,7 +114,10 @@ public class TriangleControls : MonoBehaviour
     {
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
 
-        if (!IsGrounded())
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
+        if (!isGround)
         {
             horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
         }
@@ -149,12 +164,26 @@ public class TriangleControls : MonoBehaviour
             //velocity adjusted every frame, unless dashing
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
-        
+
+        bool wasGrounded = isGround;
+        isGround = false;
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f, groundLayer);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                isGround = true;
+                if (!wasGrounded)
+                    animator.SetBool("IsJumping", false);
+            }
+        }
     }
 
-    private bool IsGrounded()
+    void OnDrawGizmos()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(groundCheck.position, 0.2f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
