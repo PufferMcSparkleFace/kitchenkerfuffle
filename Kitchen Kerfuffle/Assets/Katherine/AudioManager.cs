@@ -10,9 +10,8 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    
 
-    void Awake() //initialize the class method is in
+    void Awake() //initialize the class method is in - forgot what this mean tbh
     {
         //for music to continue to play in the next scene
         if (instance == null)
@@ -26,9 +25,10 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
 
-        //changing music pitch n volume
+        //changing music pitch n volume. can adjust in gameobject inspector
         foreach (Sound s in sounds)
-        {
+        { 
+            //"s" is for sound...i think lol
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
+        //stop playing menu music when open to Gameplay scene
         if (SceneManager.GetActiveScene().name == "Gameplay")
         {
             Destroy(gameObject);
@@ -48,11 +49,12 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-
+        //what will play in game object
         Play("MenuMusic");
         Play("BattleBGMusic");
     }
 
+    // if gameobject name is different will give warning (error code thingy)
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -65,6 +67,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    //music wont play if found wrong name in game object...i think
     public void StopPlaying(string sound)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
