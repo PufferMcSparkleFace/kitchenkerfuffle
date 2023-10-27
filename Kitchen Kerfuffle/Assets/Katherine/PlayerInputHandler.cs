@@ -67,7 +67,7 @@ public class PlayerInputHandler : MonoBehaviour
             //shoot boomerang
             Instantiate(boomerang, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
     //        animator.SetBool("isAttacking", true);
-            StartCoroutine(playAttackAnimation());
+    //        StartCoroutine(playAttackAnimation());
             canFire = false;
     //        StartCoroutine(Reload());
         }
