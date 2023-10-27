@@ -1958,7 +1958,7 @@ MonoBehaviour:
   groundCheck: {fileID: 0}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   aimCursor: {fileID: 0}
 --- !u!4 &970495948 stripped
 Transform:
@@ -2863,7 +2863,7 @@ MonoBehaviour:
   groundCheck: {fileID: 0}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   aimCursor: {fileID: 0}
 --- !u!114 &1495379921
 MonoBehaviour:
@@ -3029,7 +3029,7 @@ MonoBehaviour:
     m_ActionName: PlayersMovement/Movement
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: TriangleControls
+  m_DefaultActionMap: CircleControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1495379924 stripped
