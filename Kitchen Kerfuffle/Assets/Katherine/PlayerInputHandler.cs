@@ -8,25 +8,25 @@ public class PlayerInputHandler : MonoBehaviour
     private Controls controls;
 
     float horizontal;
-    private float speed = 6f;
+  //  private float speed = 6f;
     private float jumpHeight = 25f;
     private float fallSpeed = 8f;
     private float fastFallSpeed = 50f;
-    private bool canFastFall = false;
+  //  private bool canFastFall = false;
     private float aimRotation;
     private bool isGround;
-    Vector2 stickRotation;
-    Vector2 leftStickRotation;
+ //   Vector2 stickRotation;
+  //  Vector2 leftStickRotation;
     private bool canFire = true;
     private GameObject boomerang;
-    private float fireRate;
-    private float dashTime;
+  //  private float fireRate;
+  //  private float dashTime;
     private bool canDash = true;
     private int dashes = 3;
-    private bool isDashing = false;
-    private float dashSpeed;
-    private float dashReloadTime;
-    private ScoreTracker scoreTracker;
+  //  private bool isDashing = false;
+  //  private float dashSpeed;
+  //  private float dashReloadTime;
+ //   private ScoreTracker scoreTracker;
     public Animator animator;
 
     [SerializeField] SpriteRenderer aimIndicator;
