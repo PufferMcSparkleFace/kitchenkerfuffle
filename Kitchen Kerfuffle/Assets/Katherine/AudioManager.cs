@@ -1,5 +1,4 @@
-﻿using UnityEngine.Audio;
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,7 +26,7 @@ public class AudioManager : MonoBehaviour
 
         //changing music pitch n volume. can adjust in gameobject inspector
         foreach (Sound s in sounds)
-        { 
+        {
             //"s" is for sound...i think lol
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -51,7 +50,7 @@ public class AudioManager : MonoBehaviour
     {
         //what will play in game object
         Play("MenuMusic");
-        
+
     }
 
     // if gameobject name is different will give warning (error code thingy)

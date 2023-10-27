@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,7 +11,7 @@ public class CircleControls : MonoBehaviour
     private float jumpHeight = 9f;
     private float fallSpeed = 1f;
     private float aimRotation;
-    
+
     public bool canJump = false;
     Vector2 stickRotation;
     public float fireRate;
@@ -54,7 +52,7 @@ public class CircleControls : MonoBehaviour
 
             bubbleCentre.SetActive(true);
             StartCoroutine(Deactivate());
-            
+
             canFire = false;
             StartCoroutine(Reload());
         }
@@ -74,14 +72,14 @@ public class CircleControls : MonoBehaviour
 
     private void NormalShot(InputAction.CallbackContext obj)
     {
-        if(canFire == true)
+        if (canFire == true)
         {
             //shoot bubble animation
             animator.SetBool("IsAttacking", true);
             StartCoroutine(attackAnimation());
             Instantiate(bubble, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
             canFire = false;
-            
+
             StartCoroutine(Reload());
         }
     }
@@ -94,11 +92,11 @@ public class CircleControls : MonoBehaviour
 
     IEnumerator Reload()
     {
-        
+
         yield return new WaitForSeconds(fireRate);
         canFire = true;
         yield return null;
-        
+
     }
 
     private void Jump(InputAction.CallbackContext obj)
@@ -125,22 +123,22 @@ public class CircleControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
 
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
 
         //(Sally)
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
-        
-            if (!IsGrounded())
+
+        if (!IsGrounded())
         {
             horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
-            
+
         }
-        
-        
-       
+
+
+
 
         aimFocalPoint.position = playerPosition.position;
 
@@ -185,7 +183,7 @@ public class CircleControls : MonoBehaviour
         */
     }
 
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

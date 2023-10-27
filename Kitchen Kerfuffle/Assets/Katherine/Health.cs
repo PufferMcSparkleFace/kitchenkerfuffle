@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -23,7 +21,7 @@ public class Health : MonoBehaviour
     {
         numOfHearts -= amount;
 
-        if(numOfHearts <= 0)
+        if (numOfHearts <= 0)
         {
             // players dead
             //play death animation
@@ -34,7 +32,7 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if(health > numOfHearts)
+        if (health > numOfHearts)
         {
             health = numOfHearts;
         }
@@ -44,7 +42,8 @@ public class Health : MonoBehaviour
             if (i < health)
             {
                 hearts[i].sprite = fullHeart;
-            } else
+            }
+            else
             {
                 hearts[i].sprite = emptyHeart;
             }
@@ -52,8 +51,10 @@ public class Health : MonoBehaviour
             if (i < numOfHearts)
             {
                 hearts[i].enabled = true;
-            } else {
-            
+            }
+            else
+            {
+
                 hearts[i].enabled = false;
             }
         }

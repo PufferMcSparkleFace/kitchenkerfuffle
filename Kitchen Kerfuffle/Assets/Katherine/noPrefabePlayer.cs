@@ -1,37 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class noPrefabePlayer : MonoBehaviour
 {
-       // [SerializeField] private float speed;
-        [SerializeField] private string inputNameHorizontal;
-        [SerializeField] private string inputNameVertical;
+    // [SerializeField] private float speed;
+    [SerializeField] private string inputNameHorizontal;
+    //     [SerializeField] private string inputNameVertical;
 
-        [SerializeField] private Color color;
+    [SerializeField] private Color color;
 
-       // private Rigidbody rb;
-       // private Renderer renderer;
+    // private Rigidbody rb;
+    // private Renderer renderer;
 
-        private float inputHorizontal;
-        private float inputVertical;
+    private float inputHorizontal;
+    private float inputVertical;
 
-     //   private void Start()
+    //   private void Start()
     //    {
     //        rb = GetComponent<Rigidbody>();
     //        renderer = GetComponentInChildren<Renderer>();
     //        renderer.material.color = color;
-   //     }
+    //     }
 
-        private void Update()
-        {
-            inputHorizontal = Input.GetAxisRaw(inputNameHorizontal);
-            inputVertical = Input.GetAxisRaw(inputNameVertical);
-        }
+    private void Update()
+    {
+        inputHorizontal = Input.GetAxisRaw(inputNameHorizontal);
+        //       inputVertical = Input.GetAxisRaw(inputNameVertical);
+    }
 
-   //     private void FixedUpdate()
+    //     private void FixedUpdate()
     //    {
-   //        rb.velocity = new Vector3(inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, inputVertical * speed * Time.fixedDeltaTime);
+    //        rb.velocity = new Vector3(inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, inputVertical * speed * Time.fixedDeltaTime);
     //    }
-    
+
 }

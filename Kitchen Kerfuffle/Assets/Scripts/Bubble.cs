@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
@@ -20,7 +18,7 @@ public class Bubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
         bubbleCentre = GameObject.FindGameObjectWithTag("Bubble Centre");
         lastVelocity = bubbleRB.velocity;
         bubbleRB.AddForce((bubbleCentre.transform.position - transform.position) * 15);
@@ -30,7 +28,7 @@ public class Bubble : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //bubble breaks on contact with triangle
-        if(collision.gameObject.tag == "Triangle")
+        if (collision.gameObject.tag == "Triangle")
         {
             Destroy(gameObject);
         }
@@ -38,7 +36,7 @@ public class Bubble : MonoBehaviour
         else
         {
             collisionCount++;
-            if(collisionCount >= 4)
+            if (collisionCount >= 4)
             {
                 Destroy(gameObject);
             }
@@ -47,6 +45,6 @@ public class Bubble : MonoBehaviour
             var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
             bubbleRB.velocity = direction * Mathf.Max(speed, 0f);
         }
-        
+
     }
 }

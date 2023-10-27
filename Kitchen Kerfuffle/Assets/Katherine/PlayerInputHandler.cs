@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
 
-public class TriangleControls : MonoBehaviour
+public class PlayerInputHandler : MonoBehaviour
 {
+    private PlayerInput playerInput;
+    private Controls controls;
 
-    Controls controls;
     float horizontal;
     private float speed = 6f;
     private float jumpHeight = 25f;
@@ -65,14 +66,14 @@ public class TriangleControls : MonoBehaviour
         {
             //shoot boomerang
             Instantiate(boomerang, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
-            animator.SetBool("isAttacking", true);
+    //        animator.SetBool("isAttacking", true);
             StartCoroutine(playAttackAnimation());
             canFire = false;
-            StartCoroutine(Reload());
+    //        StartCoroutine(Reload());
         }
     }
 
-    IEnumerator playAttackAnimation()
+    /*IEnumerator playAttackAnimation()
     {
         yield return new WaitForSeconds(0.4f);
         animator.SetBool("isAttacking", false);
@@ -85,6 +86,20 @@ public class TriangleControls : MonoBehaviour
         yield return null;
     }
 
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(0, 0);
+        rb.AddForce(stickRotation * dashSpeed);
+        yield return new WaitForSeconds(dashTime);
+        rb.gravityScale = 8;
+        isDashing = false;
+        yield return new WaitForSeconds(dashReloadTime);
+        canDash = true;
+        yield return null;
+    } */
+
     public void SpecialShot(InputAction.CallbackContext obj) // WAS PRIVATE for players input
     {
         if (dashes != 0 && canDash == true)
@@ -92,7 +107,7 @@ public class TriangleControls : MonoBehaviour
             //dash (not yet coded fully)
             dashes--;
             canDash = false;
-            StartCoroutine(Dash());
+     //       StartCoroutine(Dash());
         }
     }
 
@@ -115,94 +130,18 @@ public class TriangleControls : MonoBehaviour
             rb.gravityScale = fallSpeed;
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
-
-
-        animator.SetFloat("Speed", Mathf.Abs(horizontal));
-
-        if (!isGround)
-        {
-            horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
-        }
-        else
-        {
-            dashes = 3;
-        }
-
-
-        aimFocalPoint.position = playerPosition.position;
-
-        stickRotation = controls.TriangleControls.Aim.ReadValue<Vector2>();
-
-        if (stickRotation.x != 0 && stickRotation.y != 0)
-        {
-            aimIndicator.enabled = true;
-            aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
-            aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
-        }
-        else
-        {
-            aimIndicator.enabled = false;
-        }
+        playerInput = GetComponent<PlayerInput>();
+        //       var movers = FindObjectsOfType<controls>();
+        var index = playerInput.playerIndex;
+        //       controls = controls.FirstOrDefault(m => m.GetPlayerIndex() == index);
     }
 
-    IEnumerator Dash()
+    public void OnMove(CallbackContext context)
     {
-        isDashing = true;
-        rb.gravityScale = 0;
-        rb.velocity = new Vector2(0, 0);
-        rb.AddForce(stickRotation * dashSpeed);
-        yield return new WaitForSeconds(dashTime);
-        rb.gravityScale = 8;
-        isDashing = false;
-        yield return new WaitForSeconds(dashReloadTime);
-        canDash = true;
-        yield return null;
+        if (controls != null);
+        //          controls.SetInputVector(context.ReadValue<Vector2>());
     }
 
-    private void FixedUpdate()
-    {
-        if (!isDashing)
-        {
-            //velocity adjusted every frame, unless dashing
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        }
-
-        bool wasGrounded = isGround;
-        isGround = false;
-
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f, groundLayer);
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            if (colliders[i].gameObject != gameObject)
-            {
-                isGround = true;
-                if (!wasGrounded)
-                    animator.SetBool("IsJumping", false);
-            }
-        }
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(groundCheck.position, 0.2f);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Boomerang")
-        {
-            dashes = 3;
-        }
-        if (collision.gameObject.tag == "Bubble")
-        {
-            //triangle took damage
-            scoreTracker.TriangleHit();
-        }
-    }
 }

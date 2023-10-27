@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Boomerang : MonoBehaviour
 {
@@ -21,7 +19,7 @@ public class Boomerang : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(boomerangRB.velocity == Vector2.zero)
+        if (boomerangRB.velocity == Vector2.zero)
         {
             boomerangRB.drag = 0;
         }
@@ -31,9 +29,9 @@ public class Boomerang : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Triangle")
+        if (collision.gameObject.tag == "Triangle")
         {
-            if(durability == 1)
+            if (durability == 1)
             {
                 durability--;
             }
@@ -43,13 +41,13 @@ public class Boomerang : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if(collision.gameObject.tag == "Bubble" || collision.gameObject.tag == "Circle")
+        if (collision.gameObject.tag == "Bubble" || collision.gameObject.tag == "Circle")
         {
             Destroy(gameObject);
         }
-        
+
         //boomerang bounces off other boomerangs
-        if(collision.gameObject.tag == "Boomerang" || collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Ceiling")
+        if (collision.gameObject.tag == "Boomerang" || collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Ceiling")
         {
             var speed = lastVelocity.magnitude;
             var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);

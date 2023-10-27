@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ScoreTracker : MonoBehaviour
@@ -18,7 +15,7 @@ public class ScoreTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -54,14 +51,14 @@ public class ScoreTracker : MonoBehaviour
         {
             TriangleHit();
         }
-        if(triangleLives == 0)
+        if (triangleLives == 0)
         {
             // death animation for triangle
-            TAnimator.SetBool("Death", true); 
+            TAnimator.SetBool("Death", true);
             Debug.Log("Triangle Loses!");
             SceneManager.LoadScene("BubbleWin");
         }
-        if(circleLives == 0)
+        if (circleLives == 0)
         {
             // death animation for circle
             Debug.Log("Circle Loses!");

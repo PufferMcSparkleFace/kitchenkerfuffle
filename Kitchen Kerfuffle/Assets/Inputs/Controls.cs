@@ -315,6 +315,55 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PlayersMovement"",
+            ""id"": ""d2da4b08-c064-4588-b7d3-8f7672340d25"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""7b49e643-563d-4d58-b223-278675c1aa64"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1277afb9-eff4-4916-8d9f-537eb7019a92"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""94bb050e-fbc0-4969-968d-525d9e16aa76"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""53e53765-0794-4fb7-b30d-95be5df21f4f"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -334,6 +383,9 @@ public class @Controls : IInputActionCollection, IDisposable
         m_CircleControls_Aim = m_CircleControls.FindAction("Aim", throwIfNotFound: true);
         m_CircleControls_NormalShot = m_CircleControls.FindAction("Normal Shot", throwIfNotFound: true);
         m_CircleControls_SpecialShot = m_CircleControls.FindAction("Special Shot", throwIfNotFound: true);
+        // PlayersMovement
+        m_PlayersMovement = asset.FindActionMap("PlayersMovement", throwIfNotFound: true);
+        m_PlayersMovement_Movement = m_PlayersMovement.FindAction("Movement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -517,6 +569,39 @@ public class @Controls : IInputActionCollection, IDisposable
         }
     }
     public CircleControlsActions @CircleControls => new CircleControlsActions(this);
+
+    // PlayersMovement
+    private readonly InputActionMap m_PlayersMovement;
+    private IPlayersMovementActions m_PlayersMovementActionsCallbackInterface;
+    private readonly InputAction m_PlayersMovement_Movement;
+    public struct PlayersMovementActions
+    {
+        private @Controls m_Wrapper;
+        public PlayersMovementActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_PlayersMovement_Movement;
+        public InputActionMap Get() { return m_Wrapper.m_PlayersMovement; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayersMovementActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayersMovementActions instance)
+        {
+            if (m_Wrapper.m_PlayersMovementActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_PlayersMovementActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_PlayersMovementActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_PlayersMovementActionsCallbackInterface.OnMovement;
+            }
+            m_Wrapper.m_PlayersMovementActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+            }
+        }
+    }
+    public PlayersMovementActions @PlayersMovement => new PlayersMovementActions(this);
     public interface ITriangleControlsActions
     {
         void OnJump(InputAction.CallbackContext context);
@@ -533,5 +618,9 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnNormalShot(InputAction.CallbackContext context);
         void OnSpecialShot(InputAction.CallbackContext context);
+    }
+    public interface IPlayersMovementActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
     }
 }
