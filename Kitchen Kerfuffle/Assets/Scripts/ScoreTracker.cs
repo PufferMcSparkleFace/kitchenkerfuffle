@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreTracker : MonoBehaviour
 {
@@ -25,12 +26,15 @@ public class ScoreTracker : MonoBehaviour
         }
         if(triangleLives == 0)
         {
-            TAnimator.SetBool("Death", true);
+            // death animation for triangle
+            TAnimator.SetBool("Death", true); 
             Debug.Log("Triangle Loses!");
         }
         if(circleLives == 0)
         {
-            Debug.Log("Circle Loses!");
+            // death animation for circle
+
+            Debug.Log("Circle Loses!"); 
         }
     }
 

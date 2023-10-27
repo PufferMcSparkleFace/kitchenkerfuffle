@@ -8,9 +8,29 @@ public class Health : MonoBehaviour
     public int health;
     public int numOfHearts;
 
+    public Animator deathAnim;
+
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+
+    private void Start() // when game start players are full health
+    {
+        health = numOfHearts;
+    }
+
+    void TakeDamage(int amount)
+    {
+        numOfHearts -= amount;
+
+        if(numOfHearts <= 0)
+        {
+            // players dead
+            //play death animation
+            deathAnim.SetBool("", true);
+            //show gameover panel
+        }
+    }
 
     private void Update()
     {

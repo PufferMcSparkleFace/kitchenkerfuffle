@@ -2767,13 +2767,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149074166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5723e1846ccad1241a9bc97f6f8579ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
   numOfHearts: 3
+  deathAnim: {fileID: 0}
   hearts:
   - {fileID: 946494963}
   - {fileID: 597983988}
@@ -4173,13 +4174,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009314641}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5723e1846ccad1241a9bc97f6f8579ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
   numOfHearts: 3
+  deathAnim: {fileID: 0}
   hearts:
   - {fileID: 2025467557}
   - {fileID: 1759778277}
