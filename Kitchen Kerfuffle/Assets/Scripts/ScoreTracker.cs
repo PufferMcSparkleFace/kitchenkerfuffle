@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreTracker : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class ScoreTracker : MonoBehaviour
 
     public int triangleLives = 3;
     public int circleLives = 3;
-    public Image[] triangleHearts;
-    public Image[] circleHearts;
+    public GameObject[] triangleHearts;
+    public GameObject[] circleHearts;
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,11 +59,13 @@ public class ScoreTracker : MonoBehaviour
             // death animation for triangle
             TAnimator.SetBool("Death", true); 
             Debug.Log("Triangle Loses!");
+            SceneManager.LoadScene("BubbleWin");
         }
         if(circleLives == 0)
         {
             // death animation for circle
-            Debug.Log("Circle Loses!"); 
+            Debug.Log("Circle Loses!");
+            SceneManager.LoadScene("TriangleWin");
         }
     }
 
