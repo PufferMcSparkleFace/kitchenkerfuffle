@@ -42,7 +42,7 @@ public class CircleControls : MonoBehaviour
         aimIndicator.enabled = false;
     }
 
-    private void SpecialShot(InputAction.CallbackContext obj)
+    public void SpecialShot(InputAction.CallbackContext obj) // WAS PRIVATE
     {
         if (canFire == true)
         {
@@ -70,7 +70,7 @@ public class CircleControls : MonoBehaviour
         animator.SetBool("IsSummoning", false);
     }
 
-    private void NormalShot(InputAction.CallbackContext obj)
+    public void NormalShot(InputAction.CallbackContext obj) //WAS PRIVATE
     {
         if (canFire == true)
         {
@@ -99,7 +99,7 @@ public class CircleControls : MonoBehaviour
 
     }
 
-    private void Jump(InputAction.CallbackContext obj)
+    public void Jump(InputAction.CallbackContext obj) //WAS PRIVATE
     {
         if (canJump == true)
         {

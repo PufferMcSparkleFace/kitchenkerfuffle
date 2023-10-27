@@ -36,6 +36,14 @@ public class TriangleControls : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform aimCursor;
 
+    [SerializeField]
+    private int playerIndex = 0;
+
+    public int GetPlayerIndex()
+    {
+        return playerIndex;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
