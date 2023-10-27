@@ -49,10 +49,12 @@ public class CircleControls : MonoBehaviour
         if (canFire == true)
         {
             //call bubble animation
-
+            animator.SetBool("IsSummoning", true);
+            StartCoroutine(summonAnimation());
 
             bubbleCentre.SetActive(true);
             StartCoroutine(Deactivate());
+            
             canFire = false;
             StartCoroutine(Reload());
         }
@@ -63,6 +65,11 @@ public class CircleControls : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         bubbleCentre.SetActive(false);
         yield return null;
+    }
+    IEnumerator summonAnimation()
+    {
+        yield return new WaitForSeconds(0.01f);
+        animator.SetBool("IsSummoning", false);
     }
 
     private void NormalShot(InputAction.CallbackContext obj)
@@ -104,8 +111,15 @@ public class CircleControls : MonoBehaviour
             rb.gravityScale = fallSpeed;
 
             animator.SetBool("IsJumping", true);
-            
+            StartCoroutine(jumpAnimation());
+
         }
+    }
+
+    IEnumerator jumpAnimation()
+    {
+        yield return new WaitForSeconds(0.01f);
+        animator.SetBool("IsJumping", false);
     }
 
     // Update is called once per frame
@@ -183,7 +197,7 @@ public class CircleControls : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bubble Trigger")
+        if (collision.gameObject.tag == "Bubble Trigger" && !IsGrounded())
         {
             canJump = false;
         }
@@ -198,12 +212,18 @@ public class CircleControls : MonoBehaviour
             Debug.Log("circle was hit");
             //(Sally) idk about this
             animator.SetBool("IsHit", true);
-            animator.SetBool("IsHit", false);
+            StartCoroutine(hitAnimation());
         }
 
         if (collision.gameObject.tag == "Ground")
         {
             canJump = true;
         }
+    }
+
+    IEnumerator hitAnimation()
+    {
+        yield return new WaitForSeconds(0.01f);
+        animator.SetBool("IsHit", false);
     }
 }
