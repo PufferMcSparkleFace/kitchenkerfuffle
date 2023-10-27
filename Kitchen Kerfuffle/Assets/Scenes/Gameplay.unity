@@ -245,9 +245,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 24726326f0d24dc41875ec34f94e95b2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9882353, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1456,9 +1456,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 24726326f0d24dc41875ec34f94e95b2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9862089, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1518,7 +1518,7 @@ PrefabInstance:
     - target: {fileID: 4797835947577270138, guid: b9360499ae6434847b1aa658c9cd3866,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4797835947577270138, guid: b9360499ae6434847b1aa658c9cd3866,
         type: 3}
@@ -1706,7 +1706,7 @@ PrefabInstance:
     - target: {fileID: 1792942234335924611, guid: c5c40f2981251b049b0f352f84133aa8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1792942234335924611, guid: c5c40f2981251b049b0f352f84133aa8,
         type: 3}
@@ -2000,7 +2000,7 @@ Transform:
   m_Children:
   - {fileID: 104123036}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990303632
 GameObject:
@@ -2794,7 +2794,7 @@ Transform:
   m_Children:
   - {fileID: 868270078}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492525517
 GameObject:
@@ -3696,7 +3696,7 @@ PrefabInstance:
     - target: {fileID: 1792942234335924611, guid: c5c40f2981251b049b0f352f84133aa8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1792942234335924611, guid: c5c40f2981251b049b0f352f84133aa8,
         type: 3}
@@ -3785,7 +3785,7 @@ PrefabInstance:
     - target: {fileID: 4797835947577270138, guid: b9360499ae6434847b1aa658c9cd3866,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4797835947577270138, guid: b9360499ae6434847b1aa658c9cd3866,
         type: 3}
