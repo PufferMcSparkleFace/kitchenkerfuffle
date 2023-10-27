@@ -13,12 +13,16 @@ public class CircleControls : MonoBehaviour
     private float jumpHeight = 9f;
     private float fallSpeed = 1f;
     private float aimRotation;
+    private bool isGround;
     public bool canJump = false;
     Vector2 stickRotation;
     public float fireRate;
     public bool canFire;
     public GameObject bubble;
     public ScoreTracker scoreTracker;
+
+    //(Sally)
+    public Animator animator;
 
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
@@ -45,6 +49,8 @@ public class CircleControls : MonoBehaviour
         if (canFire == true)
         {
             //call bubble animation
+
+
             bubbleCentre.SetActive(true);
             StartCoroutine(Deactivate());
             canFire = false;
@@ -64,26 +70,40 @@ public class CircleControls : MonoBehaviour
         if(canFire == true)
         {
             //shoot bubble animation
+            animator.SetBool("IsAttacking", true);
+            StartCoroutine(attackAnimation());
             Instantiate(bubble, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
             canFire = false;
+            
             StartCoroutine(Reload());
         }
     }
 
+    IEnumerator attackAnimation()
+    {
+        yield return new WaitForSeconds(0.01f);
+        animator.SetBool("IsAttacking", false);
+    }
+
     IEnumerator Reload()
     {
+        
         yield return new WaitForSeconds(fireRate);
         canFire = true;
         yield return null;
+        
     }
 
     private void Jump(InputAction.CallbackContext obj)
     {
-        if (IsGrounded() || canJump == true)
+        if (canJump == true)
         {
+            animator.SetBool("IsJumping", true);
             //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
             rb.gravityScale = fallSpeed;
+
+            
         }
     }
 
@@ -92,10 +112,16 @@ public class CircleControls : MonoBehaviour
     {
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
 
-        if (!IsGrounded())
+        //(Sally)
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
+        /*
+            if (!IsGrounded())
         {
             horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
+
         }
+        */
 
         aimFocalPoint.position = playerPosition.position;
 
@@ -113,16 +139,29 @@ public class CircleControls : MonoBehaviour
         }
     }
 
+    
+
     private void FixedUpdate()
     {
         //adjusting velocity every frame
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        bool wasGrounded = isGround;
+        isGround = false;
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f, groundLayer);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                isGround = true;
+                if (!wasGrounded)
+                    animator.SetBool("IsJumping", false);
+            }
+        }
     }
 
-    private bool IsGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -145,7 +184,11 @@ public class CircleControls : MonoBehaviour
         if(collision.gameObject.tag == "Boomerang")
         {
             //circle took damage
-            scoreTracker.CircleHit();   
+            scoreTracker.CircleHit();
+            Debug.Log("circle was hit");
+            //(Sally) idk about this
+            animator.SetBool("IsHit", true);
+            animator.SetBool("IsHit", false);
         }
     }
 }
