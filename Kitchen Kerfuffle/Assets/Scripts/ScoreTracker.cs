@@ -12,7 +12,6 @@ public class ScoreTracker : MonoBehaviour
     public int circleLives = 3;
     public Image[] triangleHearts;
     public Image[] circleHearts;
-    public GameObject[] fullHeart;
 
     // Start is called before the first frame update
     void Start()
@@ -25,28 +24,28 @@ public class ScoreTracker : MonoBehaviour
     {
         if (triangleLives < 1)
         {
-            Destroy(fullHeart[0].gameObject);
+            Destroy(triangleHearts[0].gameObject);
         }
         else if (triangleLives < 2)
         {
-            Destroy(fullHeart[1].gameObject);
+            Destroy(triangleHearts[1].gameObject);
         }
         else if (triangleLives < 3)
         {
-            Destroy(fullHeart[2].gameObject);
+            Destroy(triangleHearts[2].gameObject);
         }
 
         if (circleLives < 1)
         {
-            Destroy(fullHeart[0].gameObject);
+            Destroy(circleHearts[0].gameObject);
         }
         else if (circleLives < 2)
         {
-            Destroy(fullHeart[1].gameObject);
+            Destroy(circleHearts[1].gameObject);
         }
         else if (circleLives < 3)
         {
-            Destroy(fullHeart[2].gameObject);
+            Destroy(circleHearts[2].gameObject);
         }
 
         if (Input.GetKeyDown("space"))

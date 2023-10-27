@@ -292,8 +292,7 @@ MonoBehaviour:
   - {fileID: 946494963}
   - {fileID: 597983988}
   - {fileID: 1604589464}
-  fullHeart: {fileID: 21300000, guid: 922b01325a785e142b9a034ce53a51be, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 867624e88f7092c4e9caae9a6e24be7a, type: 3}
+  fullHeart: []
 --- !u!4 &82672479
 Transform:
   m_ObjectHideFlags: 0
