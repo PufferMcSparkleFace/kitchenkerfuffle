@@ -13,7 +13,7 @@ public class CircleControls : MonoBehaviour
     private float jumpHeight = 9f;
     private float fallSpeed = 1f;
     private float aimRotation;
-    private bool isGround;
+    
     public bool canJump = false;
     Vector2 stickRotation;
     public float fireRate;
@@ -98,11 +98,12 @@ public class CircleControls : MonoBehaviour
     {
         if (canJump == true)
         {
-            animator.SetBool("IsJumping", true);
+            canJump = false;
             //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
             rb.gravityScale = fallSpeed;
 
+            animator.SetBool("IsJumping", true);
             
         }
     }
@@ -110,18 +111,22 @@ public class CircleControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
 
         //(Sally)
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
-        /*
+        
             if (!IsGrounded())
         {
             horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
-
+            
         }
-        */
+        
+        
+       
 
         aimFocalPoint.position = playerPosition.position;
 
@@ -139,13 +144,17 @@ public class CircleControls : MonoBehaviour
         }
     }
 
-    
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
 
     private void FixedUpdate()
     {
         //adjusting velocity every frame
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
+        /*
         bool wasGrounded = isGround;
         isGround = false;
 
@@ -159,6 +168,7 @@ public class CircleControls : MonoBehaviour
                     animator.SetBool("IsJumping", false);
             }
         }
+        */
     }
 
     
@@ -181,7 +191,7 @@ public class CircleControls : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Boomerang")
+        if (collision.gameObject.tag == "Boomerang")
         {
             //circle took damage
             scoreTracker.CircleHit();
@@ -189,6 +199,11 @@ public class CircleControls : MonoBehaviour
             //(Sally) idk about this
             animator.SetBool("IsHit", true);
             animator.SetBool("IsHit", false);
+        }
+
+        if (collision.gameObject.tag == "Ground")
+        {
+            canJump = true;
         }
     }
 }
