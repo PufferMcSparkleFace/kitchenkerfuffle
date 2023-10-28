@@ -2910,8 +2910,8 @@ MonoBehaviour:
     m_ActionName: CircleControls/Jump
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1495379919}
-        m_MethodName: 
+      - m_Target: {fileID: 1495379924}
+        m_MethodName: Horizontal
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

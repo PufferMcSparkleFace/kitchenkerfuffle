@@ -183,9 +183,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Horizontal"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""2c4ce34e-c5c5-484d-8f4b-9b7ec4d57621"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 },

@@ -11,7 +11,7 @@ public class ScoreTracker : MonoBehaviour
     public GameObject[] triangleHearts;
     public GameObject[] circleHearts;
 
-
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -6,7 +6,7 @@ public class CircleControls : MonoBehaviour
 {
 
     Controls controls;
-    float horizontal;
+    private float horizontal;
     private float speed = 6f;
     private float jumpHeight = 9f;
     private float fallSpeed = 1f;
@@ -84,6 +84,8 @@ public class CircleControls : MonoBehaviour
         }
     }
 
+  
+
     IEnumerator attackAnimation()
     {
         yield return new WaitForSeconds(0.01f);
@@ -96,6 +98,12 @@ public class CircleControls : MonoBehaviour
         yield return new WaitForSeconds(fireRate);
         canFire = true;
         yield return null;
+
+    }
+
+    public void Horizontal(InputAction.CallbackContext obj)
+    {
+        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
 
     }
 
@@ -113,6 +121,7 @@ public class CircleControls : MonoBehaviour
 
         }
     }
+
 
     IEnumerator jumpAnimation()
     {
