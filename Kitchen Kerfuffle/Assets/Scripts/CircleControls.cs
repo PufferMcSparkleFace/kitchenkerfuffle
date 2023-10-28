@@ -101,11 +101,18 @@ public class CircleControls : MonoBehaviour
 
     }
 
-    public void Horizontal(InputAction.CallbackContext obj)
+   /* public void Horizontal(InputAction.CallbackContext obj)
     {
         horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
 
-    }
+        if (!IsGrounded())
+        {
+            horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
+
+        }
+
+    }*/
 
     public void Jump(InputAction.CallbackContext obj) //WAS PRIVATE
     {
