@@ -1,16 +1,7 @@
 fileFormatVersion: 2
 guid: a456a996b59262f489d712a1ca59bd72
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -5928909849592264634
-    second: Circle_Bubble_0
-  - first:
-      213: -7382842077768514095
-    second: Circle_Bubble_1
-  - first:
-      213: 1818934829636041813
-    second: Circle_Bubble_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -94,70 +85,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Circle_Bubble_0
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 8
-        width: 25
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6480dbd87e748bda0800000000000000
-      internalID: -5928909849592264634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Bubble_1
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 0
-        width: 41
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d50dc90f30ea8990800000000000000
-      internalID: -7382842077768514095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Bubble_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 14
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55cba0627972e3910800000000000000
-      internalID: 1818934829636041813
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
