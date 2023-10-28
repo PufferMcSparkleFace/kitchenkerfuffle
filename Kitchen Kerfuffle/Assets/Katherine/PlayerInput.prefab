@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
-  m_NotificationBehavior: 0
+  m_Actions: {fileID: -944628639613478452, guid: 656d767475dab72438b31af76d749831,
+    type: 3}
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -56,10 +57,135 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 93630b26-190d-4c9d-b365-b6748484478a
+    m_ActionName: TriangleControls/Jump
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: FastFall
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 78eb46a7-a73e-457a-8715-2d3a4922f3b3
+    m_ActionName: TriangleControls/FastFall[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 345939ae-5694-484b-90cf-f693accac2b2
+    m_ActionName: TriangleControls/Horizontal
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a35f6d8f-6afc-424c-a2c7-d683c5b4ac5d
+    m_ActionName: TriangleControls/Aim
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1cd270f9-7491-46b1-b2bc-a389bf49b8d8
+    m_ActionName: TriangleControls/Normal Shot
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SpecialShot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 556b776f-35a1-49d6-8f0f-85c3588c2092
+    m_ActionName: TriangleControls/Special Shot
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6a1ada67-03a0-446e-a3c8-9b387ce2c336
+    m_ActionName: CircleControls/Jump
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c4ce34e-c5c5-484d-8f4b-9b7ec4d57621
+    m_ActionName: CircleControls/Horizontal
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6beb057f-4673-4e45-8ed3-3f4cd68fbd17
+    m_ActionName: CircleControls/Aim
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: NormalShot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8071498e-2802-497d-a81b-cd412b3521b6
+    m_ActionName: CircleControls/Normal Shot
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SpecialShot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 622f62c7-bb64-4aa4-b624-213d994956f4
+    m_ActionName: CircleControls/Special Shot
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7b49e643-563d-4d58-b223-278675c1aa64
+    m_ActionName: PlayersMovement/Movement
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: PlayersMovement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &4977097981970154632
@@ -74,24 +200,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f819d63132e096046a1645daded116aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canFastFall: 0
-  canFire: 1
-  boomerang: {fileID: 0}
-  fireRate: 0
-  dashTime: 0
-  canDash: 1
-  dashes: 3
-  isDashing: 0
-  dashSpeed: 0
-  dashReloadTime: 0
-  scoreTracker: {fileID: 0}
-  animator: {fileID: 0}
-  aimIndicator: {fileID: 0}
-  playerPosition: {fileID: 0}
-  aimFocalPoint: {fileID: 0}
-  rb: {fileID: 0}
-  groundCheck: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  aimCursor: {fileID: 0}

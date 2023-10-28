@@ -27,15 +27,16 @@ public class PlayerInputHandler : MonoBehaviour
   //  private float dashSpeed;
   //  private float dashReloadTime;
  //   private ScoreTracker scoreTracker;
-    public Animator animator;
+   /* public */ Animator animator;
 
-    [SerializeField] SpriteRenderer aimIndicator;
-    [SerializeField] private Transform playerPosition;
-    [SerializeField] private Transform aimFocalPoint;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private Transform aimCursor;
+    /*  [SerializeField]*/ SpriteRenderer aimIndicator;
+    //  [SerializeField] private Transform playerPosition;
+    //  [SerializeField] private Transform aimFocalPoint;
+    /* [SerializeField] */
+    private Rigidbody2D rb;
+  //  [SerializeField] private Transform groundCheck;
+  //  [SerializeField] private LayerMask groundLayer;
+  /*  [SerializeField] */ private Transform aimCursor;
 
     // Start is called before the first frame update
     void Start()
@@ -141,10 +142,10 @@ public class PlayerInputHandler : MonoBehaviour
         //       controls = controls.FirstOrDefault(m => m.GetPlayerIndex() == index);
     }
 
-    public void OnMove(CallbackContext context)
+  /*  public void OnMove(CallbackContext context)
     {
         if (controls != null);
         //          controls.SetInputVector(context.ReadValue<Vector2>());
-    }
+    }*/
 
 }
