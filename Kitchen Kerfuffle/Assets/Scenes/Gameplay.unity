@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474f824f9b5c3de4099cc41d418c8427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TAnimator: {fileID: 0}
-  BAnimator: {fileID: 0}
+  TAnimator: {fileID: 970495947}
+  BAnimator: {fileID: 1495379922}
   triangleLives: 3
   circleLives: 3
   triangleHearts:
@@ -159,9 +159,9 @@ MonoBehaviour:
   - {fileID: 1759778275}
   - {fileID: 1257391593}
   circleHearts:
-  - {fileID: 946494961}
-  - {fileID: 597983986}
   - {fileID: 1604589462}
+  - {fileID: 597983986}
+  - {fileID: 946494961}
 --- !u!4 &82672479
 Transform:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249043646}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 8.61, y: 0.13, z: 0}
+  m_LocalPosition: {x: 9.32, y: 0.13, z: 0}
   m_LocalScale: {x: 10.875, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1274349313}
@@ -919,7 +919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626198318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -5.59, z: 0}
+  m_LocalPosition: {x: -0.03, y: -5.55, z: 0}
   m_LocalScale: {x: 21.777185, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1274349313}
@@ -1980,6 +1980,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f819d63132e096046a1645daded116aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &970495947 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1792942234335924610, guid: c5c40f2981251b049b0f352f84133aa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 970495942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &986892264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,7 +2465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207240605}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -8.55, y: 0.13, z: 0}
+  m_LocalPosition: {x: -9.33, y: 0.13, z: 0}
   m_LocalScale: {x: 10.875, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1274349313}
@@ -2971,6 +2977,12 @@ MonoBehaviour:
   m_DefaultActionMap: CircleControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &1495379922 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4797835947577270141, guid: b9360499ae6434847b1aa658c9cd3866,
+    type: 3}
+  m_PrefabInstance: {fileID: 889451710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1495379924 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4797835947577270139, guid: b9360499ae6434847b1aa658c9cd3866,
@@ -3305,8 +3317,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885992943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8, y: 4, z: 0}
-  m_LocalScale: {x: 57.16951, y: 57.16951, z: 57.16951}
+  m_LocalPosition: {x: 3.8, y: -0.1, z: 0}
+  m_LocalScale: {x: 50.880863, y: 50.880863, z: 50.880863}
   m_Children: []
   m_Father: {fileID: 1510387738}
   m_RootOrder: 0

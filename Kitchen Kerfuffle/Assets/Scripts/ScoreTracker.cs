@@ -47,10 +47,10 @@ public class ScoreTracker : MonoBehaviour
             Destroy(circleHearts[2].gameObject);
         }
 
-        if (Input.GetKeyDown("space"))
+      /*  if (Input.GetKeyDown("space"))
         {
             TriangleHit();
-        }
+        }*/
         if (triangleLives == 0)
         {
             // death animation for triangle
