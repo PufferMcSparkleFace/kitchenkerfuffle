@@ -1990,6 +1990,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f819d63132e096046a1645daded116aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  aimIndicator: {fileID: 868270079}
+  playerPosition: {fileID: 0}
+  aimFocalPoint: {fileID: 0}
+  rb: {fileID: 0}
+  groundCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  aimCursor: {fileID: 0}
 --- !u!4 &970495948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1792942234335924611, guid: c5c40f2981251b049b0f352f84133aa8,
@@ -2334,7 +2344,12 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
+<<<<<<< HEAD
   m_PlayerPrefab: {fileID: 2084392113}
+=======
+  m_PlayerPrefab: {fileID: 4977097981970154635, guid: 21d1c7fdc89fa9c4cb95fcf2ea85e7a5,
+    type: 3}
+>>>>>>> parent of 3c92330 (fixing again)
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -2855,6 +2870,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f819d63132e096046a1645daded116aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  aimIndicator: {fileID: 0}
+  playerPosition: {fileID: 0}
+  aimFocalPoint: {fileID: 0}
+  rb: {fileID: 0}
+  groundCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  aimCursor: {fileID: 0}
 --- !u!114 &1495379921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3687,11 +3712,6 @@ PrefabInstance:
       propertyPath: scoreTracker
       value: 
       objectReference: {fileID: 82672478}
-    - target: {fileID: 4977097981970154632, guid: 21d1c7fdc89fa9c4cb95fcf2ea85e7a5,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 4977097981970154633, guid: 21d1c7fdc89fa9c4cb95fcf2ea85e7a5,
         type: 3}
       propertyPath: m_Actions
@@ -3701,7 +3721,11 @@ PrefabInstance:
     - target: {fileID: 4977097981970154633, guid: 21d1c7fdc89fa9c4cb95fcf2ea85e7a5,
         type: 3}
       propertyPath: m_DefaultActionMap
+<<<<<<< HEAD
       value: d2da4b08-c064-4588-b7d3-8f7672340d25
+=======
+      value: TriangleControls
+>>>>>>> parent of 3c92330 (fixing again)
       objectReference: {fileID: 0}
     - target: {fileID: 4977097981970154633, guid: 21d1c7fdc89fa9c4cb95fcf2ea85e7a5,
         type: 3}
@@ -3870,11 +3894,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4977097981970154633, guid: 21d1c7fdc89fa9c4cb95fcf2ea85e7a5,
         type: 3}
+<<<<<<< HEAD
       propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4977097981970154633, guid: 21d1c7fdc89fa9c4cb95fcf2ea85e7a5,
         type: 3}
+=======
+>>>>>>> parent of 3c92330 (fixing again)
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -3945,11 +3972,14 @@ PrefabInstance:
       objectReference: {fileID: 1495379924}
     - target: {fileID: 4977097981970154633, guid: 21d1c7fdc89fa9c4cb95fcf2ea85e7a5,
         type: 3}
+<<<<<<< HEAD
       propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 970495946}
     - target: {fileID: 4977097981970154633, guid: 21d1c7fdc89fa9c4cb95fcf2ea85e7a5,
         type: 3}
+=======
+>>>>>>> parent of 3c92330 (fixing again)
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
