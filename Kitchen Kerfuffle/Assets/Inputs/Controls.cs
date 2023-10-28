@@ -194,17 +194,17 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Horizontal"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""2c4ce34e-c5c5-484d-8f4b-9b7ec4d57621"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
                     ""name"": ""Aim"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""6beb057f-4673-4e45-8ed3-3f4cd68fbd17"",
-                    ""expectedControlType"": ""Stick"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -229,7 +229,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0ddc6c67-7801-43e5-8913-1fb29b417e78"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -239,8 +239,8 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""de2aa61c-bdf5-4d18-9764-077c2dc8a078"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""id"": ""a5538868-0d5d-483f-a776-0acbda812b07"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -250,7 +250,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""1D Axis"",
-                    ""id"": ""58f29a6f-ec12-49bb-90f3-5e4c6a4f6dd5"",
+                    ""id"": ""e380d529-8f54-4945-8030-6923658530f3"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -261,8 +261,8 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""7d1f5679-18e0-4a36-a243-4ef9bbf62632"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""id"": ""a5e77645-9f0a-4697-b018-dde3e0bebb00"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -272,8 +272,8 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""453bf98c-db98-4679-9d3a-65123ab4b6ce"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""id"": ""b809a504-c6d4-44d5-92ca-0b54054123d9"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -295,7 +295,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""93156f80-2ef4-4730-a3b8-c8f202947ebf"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -306,7 +306,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""26e97d7c-7897-45e6-bfa4-ae97102aebb4"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Keyboard>/g"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
