@@ -67,7 +67,7 @@ public class TriangleControls : MonoBehaviour
          aimIndicator.enabled = false;
      } */
 
-    private void NormalShot(InputAction.CallbackContext obj)
+    public void NormalShot(InputAction.CallbackContext obj)
     {
         if (canFire == true)
         {
