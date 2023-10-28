@@ -334,7 +334,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -935,7 +935,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1246,7 +1246,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1605,6 +1605,11 @@ PrefabInstance:
       propertyPath: aimFocalPoint
       value: 
       objectReference: {fileID: 986892265}
+    - target: {fileID: 4797835947577270142, guid: b9360499ae6434847b1aa658c9cd3866,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9360499ae6434847b1aa658c9cd3866, type: 3}
 --- !u!1 &946494961
@@ -1688,6 +1693,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1384536372}
     m_Modifications:
+    - target: {fileID: 1792942234335924608, guid: c5c40f2981251b049b0f352f84133aa8,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1792942234335924608, guid: c5c40f2981251b049b0f352f84133aa8,
         type: 3}
       propertyPath: m_AutoTiling
@@ -2496,7 +2506,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
