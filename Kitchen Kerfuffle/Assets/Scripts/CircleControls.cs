@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Audio;
 
 public class CircleControls : MonoBehaviour
 {
-    AudioManager audioManager;
 
     Controls controls;
     private float horizontal;
@@ -37,7 +35,6 @@ public class CircleControls : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject bubbleCentre;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +52,6 @@ public class CircleControls : MonoBehaviour
     {
         if (canFire == true)
         {
-            audioManager.PlaySFX(audioManager.CirspecialShotSFX);
             //call bubble animation
             animator.SetBool("IsSummoning", true);
             StartCoroutine(summonAnimation());
@@ -84,7 +80,6 @@ public class CircleControls : MonoBehaviour
     {
         if (canFire == true)
         {
-            audioManager.PlaySFX(audioManager.CirnormalShotSFX);
             //shoot bubble animation
             animator.SetBool("IsAttacking", true);
             StartCoroutine(attackAnimation());
@@ -144,7 +139,6 @@ public class CircleControls : MonoBehaviour
     {
         if (canJump == true)
         {
-            audioManager.PlaySFX(audioManager.CirjumpSFX);
             canJump = false;
             //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
@@ -252,7 +246,6 @@ public class CircleControls : MonoBehaviour
     {
         if (collision.gameObject.tag == "Boomerang")
         {
-            audioManager.PlaySFX(audioManager.CirdeathSFX);
             //circle took damage
             scoreTracker.CircleHit();
             Debug.Log("circle was hit");
@@ -271,6 +264,5 @@ public class CircleControls : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         animator.SetBool("IsHit", false);
-        
     }
 }

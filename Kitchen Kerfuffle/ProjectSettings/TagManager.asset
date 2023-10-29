@@ -13,7 +13,6 @@ TagManager:
   - Ceiling
   - Walls
   - Bubble
-  - Audio
   layers:
   - Default
   - TransparentFX
