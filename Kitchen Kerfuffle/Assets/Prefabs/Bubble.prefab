@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 6034735896109803929}
   - component: {fileID: 6034735896109803928}
   - component: {fileID: 6034735896109803934}
+  - component: {fileID: 368550455752954523}
   m_Layer: 12
   m_Name: Bubble
   m_TagString: Bubble
@@ -185,3 +186,23 @@ MonoBehaviour:
   bubbleRB: {fileID: 6034735896109803929}
   bubbleSpeed: 150
   bubbleCentre: {fileID: 0}
+  animator: {fileID: 368550455752954523}
+--- !u!95 &368550455752954523
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6034735896109803925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6a853911b544f641b50f4e38ab58ef8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -8,6 +8,8 @@ public class Bubble : MonoBehaviour
     private int collisionCount;
     [SerializeField] private GameObject bubbleCentre;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,8 @@ public class Bubble : MonoBehaviour
         bubbleCentre = GameObject.FindGameObjectWithTag("Bubble Centre");
         lastVelocity = bubbleRB.velocity;
         bubbleRB.AddForce((bubbleCentre.transform.position - transform.position) * 15);
-
+        
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

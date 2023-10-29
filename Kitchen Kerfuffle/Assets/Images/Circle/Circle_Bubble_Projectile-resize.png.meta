@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: a456a996b59262f489d712a1ca59bd72
+guid: c63df2b8d33a9d34e9e332e5bac1d1c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5928909849592264634
-    second: Circle_Bubble_0
+      213: 7346347483446724752
+    second: Circle_Bubble_Projectile-resize_0
   - first:
-      213: -7382842077768514095
-    second: Circle_Bubble_1
+      213: -2548163299555307202
+    second: Circle_Bubble_Projectile-resize_1
   - first:
-      213: 1818934829636041813
-    second: Circle_Bubble_2
+      213: 6799565586933135211
+    second: Circle_Bubble_Projectile-resize_2
+  - first:
+      213: 3705534185423117765
+    second: Circle_Bubble_Projectile-resize_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -54,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 5
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,55 +99,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Circle_Bubble_0
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 8
-        width: 25
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6480dbd87e748bda0800000000000000
-      internalID: -5928909849592264634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Bubble_1
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 0
-        width: 41
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d50dc90f30ea8990800000000000000
-      internalID: -7382842077768514095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Bubble_2
+      name: Circle_Bubble_Projectile-resize_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 14
-        width: 14
-        height: 14
+        y: 0
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +113,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55cba0627972e3910800000000000000
-      internalID: 1818934829636041813
+      spriteID: 0984d631d1873f560800000000000000
+      internalID: 7346347483446724752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circle_Bubble_Projectile-resize_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e319154dafa13acd0800000000000000
+      internalID: -2548163299555307202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circle_Bubble_Projectile-resize_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67be1c20e8ec5e50800000000000000
+      internalID: 6799565586933135211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circle_Bubble_Projectile-resize_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd163975b3bc6330800000000000000
+      internalID: 3705534185423117765
       vertices: []
       indices: 
       edges: []
