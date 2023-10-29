@@ -19,6 +19,10 @@ public class CircleControls : MonoBehaviour
     public GameObject bubble;
     public ScoreTracker scoreTracker;
 
+    //for mouse aim
+    /*public Camera mainCam;
+    private Vector3 mousePos;*/
+
     //(Sally)
     public Animator animator;
 
@@ -40,6 +44,8 @@ public class CircleControls : MonoBehaviour
         controls.CircleControls.SpecialShot.performed += SpecialShot;
         controls.Enable();
         aimIndicator.enabled = false;
+
+     //   mainCam = GameObject.FindGameObjectWithTag("Main Camera").GetComponent<Camera>();
     }
 
     public void SpecialShot(InputAction.CallbackContext obj) // WAS PRIVATE void
@@ -114,22 +120,19 @@ public class CircleControls : MonoBehaviour
 
      }
 
+
     public void Aim(InputAction.CallbackContext obj)
     {
+        //mouse aim
+
+        /*aimIndicator.enabled = true;
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 rotation = mousePos - transform.position;
+        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rotZ); */
+
         aimFocalPoint.position = playerPosition.position;
-
         stickRotation = controls.CircleControls.Aim.ReadValue<Vector2>();
-
-        if (stickRotation.x != 0 && stickRotation.y != 0)
-        {
-            aimIndicator.enabled = true;
-            aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
-            aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
-        }
-        else
-        {
-            aimIndicator.enabled = false;
-        }
     }
 
     public void Jump(InputAction.CallbackContext obj) //WAS PRIVATE
@@ -171,11 +174,15 @@ public class CircleControls : MonoBehaviour
 
         }
 
-
-
+        //mouse aim
+    
+        /*aimIndicator.enabled = true;
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 rotation = mousePos - transform.position;
+        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rotZ); */
 
         aimFocalPoint.position = playerPosition.position;
-
         stickRotation = controls.CircleControls.Aim.ReadValue<Vector2>();
 
         if (stickRotation.x != 0 && stickRotation.y != 0)
@@ -187,7 +194,7 @@ public class CircleControls : MonoBehaviour
         else
         {
             aimIndicator.enabled = false;
-        }
+        } 
     }
 
     private bool IsGrounded()
