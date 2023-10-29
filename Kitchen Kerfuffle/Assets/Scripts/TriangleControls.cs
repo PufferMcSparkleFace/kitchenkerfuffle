@@ -28,6 +28,7 @@ public class TriangleControls : MonoBehaviour
     public ScoreTracker scoreTracker;
     public Animator animator;
 
+    [Header("---------Triangle Movements")]
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
     [SerializeField] private Transform aimFocalPoint;
@@ -36,7 +37,14 @@ public class TriangleControls : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform aimCursor;
 
-    [SerializeField]
+    [Header("---------Triangle SFX")]
+    [SerializeField] private AudioSource TJumpSFX;
+    [SerializeField] private AudioSource TDeathSFX;
+    [SerializeField] private AudioSource TNormalShotSFX;
+    [SerializeField] private AudioSource TSpecialShotSFX;
+    [SerializeField] private AudioSource TFastFallSFX;
+
+     [SerializeField]
     private int playerIndex = 0;
 
     public int GetPlayerIndex()
@@ -71,6 +79,7 @@ public class TriangleControls : MonoBehaviour
     {
         if (canFire == true)
         {
+            TNormalShotSFX.Play();
             //shoot boomerang
             Instantiate(boomerang, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
             animator.SetBool("isAttacking", true);
@@ -97,6 +106,7 @@ public class TriangleControls : MonoBehaviour
     {
         if (dashes != 0 && canDash == true)
         {
+            TSpecialShotSFX.Play();
             //dash (not yet coded fully)
             dashes--;
             canDash = false;
@@ -126,6 +136,7 @@ public class TriangleControls : MonoBehaviour
     {
         if (!isGround && rb.velocity.y <= 0)
         {
+            TFastFallSFX.Play();
             //fast fall, animation optional
             rb.gravityScale = fastFallSpeed;
         }
@@ -142,6 +153,7 @@ public class TriangleControls : MonoBehaviour
     {
         if (isGround)
         {
+            TJumpSFX.Play();
             animator.SetBool("IsJumping", true);
             //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
@@ -235,6 +247,7 @@ public class TriangleControls : MonoBehaviour
         if (collision.gameObject.tag == "Bubble")
         {
             //triangle took damage
+            TDeathSFX.Play();
             scoreTracker.TriangleHit();
         }
     }
