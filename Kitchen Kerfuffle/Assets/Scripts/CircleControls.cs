@@ -114,6 +114,24 @@ public class CircleControls : MonoBehaviour
 
      }
 
+    public void Aim(InputAction.CallbackContext obj)
+    {
+        aimFocalPoint.position = playerPosition.position;
+
+        stickRotation = controls.CircleControls.Aim.ReadValue<Vector2>();
+
+        if (stickRotation.x != 0 && stickRotation.y != 0)
+        {
+            aimIndicator.enabled = true;
+            aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
+            aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
+        }
+        else
+        {
+            aimIndicator.enabled = false;
+        }
+    }
+
     public void Jump(InputAction.CallbackContext obj) //WAS PRIVATE
     {
         if (canJump == true)

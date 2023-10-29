@@ -104,6 +104,24 @@ public class TriangleControls : MonoBehaviour
         }
     }
 
+    public void Aim(InputAction.CallbackContext obj)
+    {
+        aimFocalPoint.position = playerPosition.position;
+
+        stickRotation = controls.TriangleControls.Aim.ReadValue<Vector2>();
+
+        if (stickRotation.x != 0 && stickRotation.y != 0)
+        {
+            aimIndicator.enabled = true;
+            aimRotation = Mathf.Atan2(stickRotation.x, stickRotation.y) * -180 / Mathf.PI;
+            aimFocalPoint.rotation = Quaternion.Euler(0f, 0f, aimRotation);
+        }
+        else
+        {
+            aimIndicator.enabled = false;
+        }
+    }
+
     public void FastFall(InputAction.CallbackContext obj) //for players input 
     {
         if (!isGround && rb.velocity.y <= 0)
@@ -111,6 +129,13 @@ public class TriangleControls : MonoBehaviour
             //fast fall, animation optional
             rb.gravityScale = fastFallSpeed;
         }
+    }
+
+    public void Horizontal(InputAction.CallbackContext obj)
+    {
+        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+
     }
 
     public void Jump(InputAction.CallbackContext obj) // WAS PRIVATE for players input

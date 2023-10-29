@@ -1480,11 +1480,33 @@ MonoBehaviour:
     m_ActionId: 78eb46a7-a73e-457a-8715-2d3a4922f3b3
     m_ActionName: TriangleControls/FastFall[/Keyboard/s]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 970495944}
+        m_MethodName: Horizontal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 345939ae-5694-484b-90cf-f693accac2b2
     m_ActionName: TriangleControls/Horizontal
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 970495944}
+        m_MethodName: Aim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a35f6d8f-6afc-424c-a2c7-d683c5b4ac5d
     m_ActionName: TriangleControls/Aim
   - m_PersistentCalls:
