@@ -1092,7 +1092,7 @@ PrefabInstance:
     - target: {fileID: 4797835947577270128, guid: b9360499ae6434847b1aa658c9cd3866,
         type: 3}
       propertyPath: m_Name
-      value: Circle (1)
+      value: 'Circle '
       objectReference: {fileID: 0}
     - target: {fileID: 4797835947577270128, guid: b9360499ae6434847b1aa658c9cd3866,
         type: 3}
@@ -1380,7 +1380,7 @@ PrefabInstance:
     - target: {fileID: 1792942234335924615, guid: c5c40f2981251b049b0f352f84133aa8,
         type: 3}
       propertyPath: m_Name
-      value: Triangle (1)
+      value: 'Triangle '
       objectReference: {fileID: 0}
     - target: {fileID: 1792942234335924615, guid: c5c40f2981251b049b0f352f84133aa8,
         type: 3}
