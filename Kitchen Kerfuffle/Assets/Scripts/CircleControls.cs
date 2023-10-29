@@ -26,6 +26,7 @@ public class CircleControls : MonoBehaviour
     //(Sally)
     public Animator animator;
 
+    [Header("---------Circle Movements")]
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
     [SerializeField] private Transform aimCursor;
@@ -34,6 +35,12 @@ public class CircleControls : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject bubbleCentre;
+
+    [Header("---------Circle SFX")]
+    [SerializeField] private AudioSource CJumpSFX;
+    [SerializeField] private AudioSource CDeathSFX;
+    [SerializeField] private AudioSource CNormalShotSFX;
+    [SerializeField] private AudioSource CSpecialShotSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +59,7 @@ public class CircleControls : MonoBehaviour
     {
         if (canFire == true)
         {
+            CSpecialShotSFX.Play();
             //call bubble animation
             animator.SetBool("IsSummoning", true);
             StartCoroutine(summonAnimation());
@@ -80,6 +88,7 @@ public class CircleControls : MonoBehaviour
     {
         if (canFire == true)
         {
+            CNormalShotSFX.Play();
             //shoot bubble animation
             animator.SetBool("IsAttacking", true);
             StartCoroutine(attackAnimation());
@@ -139,6 +148,7 @@ public class CircleControls : MonoBehaviour
     {
         if (canJump == true)
         {
+            CJumpSFX.Play();
             canJump = false;
             //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
@@ -247,6 +257,7 @@ public class CircleControls : MonoBehaviour
         if (collision.gameObject.tag == "Boomerang")
         {
             //circle took damage
+            CDeathSFX.Play();
             scoreTracker.CircleHit();
             Debug.Log("circle was hit");
             //(Sally) idk about this
