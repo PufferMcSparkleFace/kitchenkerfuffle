@@ -182,6 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a5b57be31dc3548861b7df488fb0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleRB: {fileID: 0}
+  bubbleRB: {fileID: 6034735896109803929}
   bubbleSpeed: 150
   bubbleCentre: {fileID: 0}
