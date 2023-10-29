@@ -77,9 +77,10 @@ public class TriangleControls : MonoBehaviour
 
     public void NormalShot(InputAction.CallbackContext obj)
     {
+        TNormalShotSFX.Play();
         if (canFire == true)
         {
-            TNormalShotSFX.Play();
+            
             //shoot boomerang
             Instantiate(boomerang, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
             animator.SetBool("isAttacking", true);
@@ -104,9 +105,10 @@ public class TriangleControls : MonoBehaviour
 
     public void SpecialShot(InputAction.CallbackContext obj) // WAS PRIVATE for players input
     {
+        TSpecialShotSFX.Play();
         if (dashes != 0 && canDash == true)
         {
-            TSpecialShotSFX.Play();
+            
             //dash (not yet coded fully)
             dashes--;
             canDash = false;
@@ -134,9 +136,10 @@ public class TriangleControls : MonoBehaviour
 
     public void FastFall(InputAction.CallbackContext obj) //for players input 
     {
+        TFastFallSFX.Play();
         if (!isGround && rb.velocity.y <= 0)
         {
-            TFastFallSFX.Play();
+            
             //fast fall, animation optional
             rb.gravityScale = fastFallSpeed;
         }
@@ -151,9 +154,10 @@ public class TriangleControls : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext obj) // WAS PRIVATE for players input
     {
+        TJumpSFX.Play();
         if (isGround)
         {
-            TJumpSFX.Play();
+            
             animator.SetBool("IsJumping", true);
             //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
