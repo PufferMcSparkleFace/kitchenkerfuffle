@@ -1189,6 +1189,11 @@ PrefabInstance:
       propertyPath: aimFocalPoint
       value: 
       objectReference: {fileID: 986892265}
+    - target: {fileID: 4797835948053386846, guid: b9360499ae6434847b1aa658c9cd3866,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9360499ae6434847b1aa658c9cd3866, type: 3}
 --- !u!1 &946494961
@@ -2134,7 +2139,18 @@ MonoBehaviour:
     m_ActionId: 6a1ada67-03a0-446e-a3c8-9b387ce2c336
     m_ActionName: CircleControls/Jump
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1495379924}
+        m_MethodName: Horizontal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2c4ce34e-c5c5-484d-8f4b-9b7ec4d57621
     m_ActionName: CircleControls/Horizontal
   - m_PersistentCalls:

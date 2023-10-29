@@ -42,7 +42,7 @@ public class CircleControls : MonoBehaviour
         aimIndicator.enabled = false;
     }
 
-    public void SpecialShot(InputAction.CallbackContext obj) // WAS PRIVATE
+    public void SpecialShot(InputAction.CallbackContext obj) // WAS PRIVATE void
     {
         if (canFire == true)
         {
@@ -70,7 +70,7 @@ public class CircleControls : MonoBehaviour
         animator.SetBool("IsSummoning", false);
     }
 
-    public void NormalShot(InputAction.CallbackContext obj) //WAS PRIVATE
+    public void NormalShot(InputAction.CallbackContext obj) //WAS PRIVATE void
     {
         if (canFire == true)
         {
@@ -101,18 +101,18 @@ public class CircleControls : MonoBehaviour
 
     }
 
-   /* public void Horizontal(InputAction.CallbackContext obj)
-    {
-        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
-        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+     public void Horizontal(InputAction.CallbackContext obj)
+     {
+         horizontal = controls.CircleControls.Horizontal.ReadValue<float>();
+         horizontal = controls.CircleControls.Horizontal.ReadValue<float>();
 
-        if (!IsGrounded())
-        {
-            horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
+         if (!IsGrounded())
+         {
+             horizontal = controls.CircleControls.Horizontal.ReadValue<float>() * 0.85f;
 
-        }
+         }
 
-    }*/
+     }
 
     public void Jump(InputAction.CallbackContext obj) //WAS PRIVATE
     {
@@ -141,7 +141,7 @@ public class CircleControls : MonoBehaviour
     {
 
 
-        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+        horizontal = controls.CircleControls.Horizontal.ReadValue<float>();
 
         //(Sally)
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
@@ -149,7 +149,7 @@ public class CircleControls : MonoBehaviour
 
         if (!IsGrounded())
         {
-            horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
+            horizontal = controls.CircleControls.Horizontal.ReadValue<float>() * 0.85f;
 
         }
 
@@ -158,7 +158,7 @@ public class CircleControls : MonoBehaviour
 
         aimFocalPoint.position = playerPosition.position;
 
-        stickRotation = controls.TriangleControls.Aim.ReadValue<Vector2>();
+        stickRotation = controls.CircleControls.Aim.ReadValue<Vector2>();
 
         if (stickRotation.x != 0 && stickRotation.y != 0)
         {
