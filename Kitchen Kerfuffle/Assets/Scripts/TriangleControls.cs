@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class TriangleControls : MonoBehaviour
 {
+    AudioManager audioManager;
 
     Controls controls;
     float horizontal;
@@ -71,6 +72,7 @@ public class TriangleControls : MonoBehaviour
     {
         if (canFire == true)
         {
+            audioManager.PlaySFX(audioManager.TrinormalShotSFX);
             //shoot boomerang
             Instantiate(boomerang, aimCursor.position, Quaternion.Euler(0f, 0f, aimRotation));
             animator.SetBool("isAttacking", true);
@@ -97,6 +99,7 @@ public class TriangleControls : MonoBehaviour
     {
         if (dashes != 0 && canDash == true)
         {
+            audioManager.PlaySFX(audioManager.TrispecialShotSFX);
             //dash (not yet coded fully)
             dashes--;
             canDash = false;
@@ -142,6 +145,7 @@ public class TriangleControls : MonoBehaviour
     {
         if (isGround)
         {
+            audioManager.PlaySFX(audioManager.TrijumpSFX);
             animator.SetBool("IsJumping", true);
             //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
@@ -234,6 +238,7 @@ public class TriangleControls : MonoBehaviour
         }
         if (collision.gameObject.tag == "Bubble")
         {
+            audioManager.PlaySFX(audioManager.TrideathSFX);
             //triangle took damage
             scoreTracker.TriangleHit();
         }

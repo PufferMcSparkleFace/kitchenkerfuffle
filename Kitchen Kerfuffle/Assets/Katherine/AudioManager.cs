@@ -4,8 +4,39 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    [Header("--------------- Audio Source ---------------")]
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource SFXSource;
 
-    public Sound[] sounds;
+    [Header("--------------- BG Audio Clips ---------------")]
+    public AudioClip BGMusic;
+
+    [Header("--------------- Triangle SFX Clips ---------------")]
+    public AudioClip TrideathSFX;
+    public AudioClip TrijumpSFX;
+    public AudioClip TrinormalShotSFX;
+    public AudioClip TrispecialShotSFX;
+
+    [Header("--------------- Circle SFX Clips ---------------")]
+    public AudioClip CirdeathSFX;
+    public AudioClip CirjumpSFX;
+    public AudioClip CirnormalShotSFX;
+    public AudioClip CirspecialShotSFX;
+
+    private void Start()
+    {
+        musicSource.clip = BGMusic;
+        musicSource.Play();
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
+    }
+
+
+    //old audio manager
+    /*public Sound[] sounds;
 
     public static AudioManager instance;
 
@@ -80,7 +111,7 @@ public class AudioManager : MonoBehaviour
         s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitch / 2f, s.pitch / 2f));
 
         s.source.Stop();
-    }
+    } */
 
 
 }
