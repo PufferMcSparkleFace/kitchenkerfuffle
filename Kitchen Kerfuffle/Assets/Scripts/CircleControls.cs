@@ -19,14 +19,9 @@ public class CircleControls : MonoBehaviour
     public GameObject bubble;
     public ScoreTracker scoreTracker;
 
-    //for mouse aim
-    /*public Camera mainCam;
-    private Vector3 mousePos;*/
-
     //(Sally)
     public Animator animator;
 
-    [Header("---------Circle Movements")]
     [SerializeField] SpriteRenderer aimIndicator;
     [SerializeField] private Transform playerPosition;
     [SerializeField] private Transform aimCursor;
@@ -35,12 +30,6 @@ public class CircleControls : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject bubbleCentre;
-
-    [Header("---------Circle SFX")]
-    [SerializeField] private AudioSource CJumpSFX;
-    [SerializeField] private AudioSource CDeathSFX;
-    [SerializeField] private AudioSource CNormalShotSFX;
-    [SerializeField] private AudioSource CSpecialShotSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -51,15 +40,12 @@ public class CircleControls : MonoBehaviour
         controls.CircleControls.SpecialShot.performed += SpecialShot;
         controls.Enable();
         aimIndicator.enabled = false;
-
-     //   mainCam = GameObject.FindGameObjectWithTag("Main Camera").GetComponent<Camera>();
     }
 
-    public void SpecialShot(InputAction.CallbackContext obj) // WAS PRIVATE void
+    public void SpecialShot(InputAction.CallbackContext obj) // WAS PRIVATE
     {
         if (canFire == true)
         {
-            CSpecialShotSFX.Play();
             //call bubble animation
             animator.SetBool("IsSummoning", true);
             StartCoroutine(summonAnimation());
@@ -84,11 +70,10 @@ public class CircleControls : MonoBehaviour
         animator.SetBool("IsSummoning", false);
     }
 
-    public void NormalShot(InputAction.CallbackContext obj) //WAS PRIVATE void
+    public void NormalShot(InputAction.CallbackContext obj) //WAS PRIVATE
     {
         if (canFire == true)
         {
-            CNormalShotSFX.Play();
             //shoot bubble animation
             animator.SetBool("IsAttacking", true);
             StartCoroutine(attackAnimation());
@@ -116,39 +101,23 @@ public class CircleControls : MonoBehaviour
 
     }
 
-     public void Horizontal(InputAction.CallbackContext obj)
-     {
-         horizontal = controls.CircleControls.Horizontal.ReadValue<float>();
-         horizontal = controls.CircleControls.Horizontal.ReadValue<float>();
-
-         if (!IsGrounded())
-         {
-             horizontal = controls.CircleControls.Horizontal.ReadValue<float>() * 0.85f;
-
-         }
-
-     }
-
-
-    public void Aim(InputAction.CallbackContext obj)
+   /* public void Horizontal(InputAction.CallbackContext obj)
     {
-        //mouse aim
+        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
+        horizontal = controls.TriangleControls.Horizontal.ReadValue<float>();
 
-        /*aimIndicator.enabled = true;
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 rotation = mousePos - transform.position;
-        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rotZ); */
+        if (!IsGrounded())
+        {
+            horizontal = controls.TriangleControls.Horizontal.ReadValue<float>() * 0.85f;
 
-        aimFocalPoint.position = playerPosition.position;
-        stickRotation = controls.CircleControls.Aim.ReadValue<Vector2>();
-    }
+        }
+
+    }*/
 
     public void Jump(InputAction.CallbackContext obj) //WAS PRIVATE
     {
         if (canJump == true)
         {
-            CJumpSFX.Play();
             canJump = false;
             //jump
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
@@ -184,13 +153,8 @@ public class CircleControls : MonoBehaviour
 
         }
 
-        //mouse aim
-    
-        /*aimIndicator.enabled = true;
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 rotation = mousePos - transform.position;
-        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rotZ); */
+
+
 
         aimFocalPoint.position = playerPosition.position;
 
@@ -206,7 +170,7 @@ public class CircleControls : MonoBehaviour
         else
         {
             aimIndicator.enabled = false;
-        } 
+        }
     }
 
     private bool IsGrounded()
@@ -259,7 +223,6 @@ public class CircleControls : MonoBehaviour
         if (collision.gameObject.tag == "Boomerang")
         {
             //circle took damage
-            CDeathSFX.Play();
             scoreTracker.CircleHit();
             Debug.Log("circle was hit");
             //(Sally) idk about this

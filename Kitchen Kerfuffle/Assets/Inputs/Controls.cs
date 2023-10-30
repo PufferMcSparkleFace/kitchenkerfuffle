@@ -275,7 +275,7 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""id"": ""7b98ea2b-db33-429e-bd27-47d5d65cb491"",
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
-                    ""processors"": ""StickDeadzone(min=0.65)"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Aim"",
                     ""isComposite"": false,
