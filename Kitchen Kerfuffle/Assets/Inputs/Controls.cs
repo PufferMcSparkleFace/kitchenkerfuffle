@@ -193,7 +193,7 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""name"": ""Aim"",
                     ""type"": ""Value"",
                     ""id"": ""6beb057f-4673-4e45-8ed3-3f4cd68fbd17"",
-                    ""expectedControlType"": ""Vector3"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -273,7 +273,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7b98ea2b-db33-429e-bd27-47d5d65cb491"",
-                    ""path"": ""<Mouse>/press"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone(min=0.65)"",
                     ""groups"": """",

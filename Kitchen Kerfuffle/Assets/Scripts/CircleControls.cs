@@ -193,7 +193,9 @@ public class CircleControls : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rotZ); */
 
         aimFocalPoint.position = playerPosition.position;
-        stickRotation = controls.CircleControls.Aim.ReadValue<Vector2>();
+
+        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(controls.CircleControls.Aim.ReadValue<Vector2>());
+        stickRotation = worldPosition - (Vector2)transform.position;
 
         if (stickRotation.x != 0 && stickRotation.y != 0)
         {
